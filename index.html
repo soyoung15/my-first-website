@@ -9,14 +9,10 @@
 
 <body>
     <!-- INTRO ANIMATION BEFORE HOMEPAGE SCREEN -->
-     <section class="introPage" id="intro_page">
-        <div class="introBackground">
-            <img src="images/edited-photo.png" alt="intro animation image"
-        </div>
-
-        <div class="introOverlayer"></div>
-
-        <div class="introElements">
+    <section class="introPage" id="intro_page" aria-label="Intro animation">
+        <img src="images/intro-pic.png" alt="intro animation image" class="introBgimage">
+        
+        <section class="introElements">
             <img src="images/logo.png" alt="regina hona's logo" class="introLogo">
 
             <p class="introText" id="intro_text">
@@ -26,27 +22,116 @@
             <p class="instructionToStart" id="Instruction_tap">
                 Tap to begin exploration
             </p>
-        </div>
-     </section>
+        </section>
+    </section>
 
      <!-- ACTUAL HOMEPAGE -->
-    <div class="actualHomepage" id="actual_homepage">
+    <section class="actualHomepage" id="actual_homepage">
         <header class="siteHeader">
-            <div class="leftsideHeader">
-                <button class="hamburgerMenubar" id="menu_bar" aria-label="Open menu">
-                    <img src="images/open_menu.png" alt="open menu icon"
-                </button>
-            </div>
+            <button class="hamburgerMenubar" id="menu_bar" aria-label="Open menu">
+                <img src="images/open_menu.png" alt="open menu icon">
+            </button>
 
-            <div class="logoCenter">
-                <a href="shoppingcart.html" class="shoppingcartLink" aria-label="shopping_cart">
-                    <img src="images/shoppingcart.png" alt="shopping cart icon" class="shoppingcartIcon">
-                </a>
-            </div>
+            <a href="index.html" class="logoToHome" aria-label="Going back to homepage">
+                <img src="images/logo.png" alt="regina hona's logo" class="homepageLogo">
+            </a>
+
+            <a href="shoppingcart.html" class="shoppingcartLink" aria-label="Shopping cart">
+                <img src="images/shoppingcart.png" alt="shopping cart icon" class="shoppingcartIcon">
+            </a>
         </header>
-    </div>
 
-    
+        <nav class="mobileNavi" id="mobile_navi" aria-label="Navigation">
+            <button class="menubarClose" id="close_menu_bar" aria-label="Close menu">
+                <img src="images/close_menu.png" alt="close menu icon">
+            </button>
+            
+            <ul class="menubarList">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
 
+        <main>
+            <section class="herobanner">
+                <h1>Let me help you bring the love of water into your life.</h1>
+
+                <img src="images/intro-pic.png" alt="herobanner image" class="herobannerImage">
+            </section>
+
+            <section class="previewGallery" aria-labelledby="preview_gallery_text">
+                <h2 id="preview_gallery_text">Explore</h2>
+
+                <section class="galleryAnimation">
+                    <article class="artworkCards">
+                        <img src="images/people-14.png" alt="two children">
+                    </article>
+
+                    <article class="artworkCards">
+                        <img src="images/water-13.png" alt="sunset boat">
+                    </article>
+
+                    <article class="artworkCards">
+                        <img src="images/people-16.png" alt="couple looking down">
+                    </article>
+                </section>
+                
+                <a href="gallery.html" class="previewButton">Browse gallery</a>
+            </section>
+
+            <section class="previewShop">
+                <section class="shopAnimation">
+                    <article class="artworkCards">
+                        <img src="images/cave explorers.png" alt="child in the forest">
+                    </article>
+
+                    <article class="artworkCards">
+                        <img src="images/grandmother's gown.png" alt="woman in blue dress">
+                    </article>
+
+                    <article class="artworkCards">
+                        <img src="images/Island Harbour, Greece.png" alt="boat on the right">
+                    </article>
+                </section>
+
+                <a href="shop.html" class="previewButton">Browse shop</a>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <section class="insiderlistText">
+                <h2>Join my Insiders List</h2>
+                <p>Get first access to new work, exhibitions and art related news.</p>
+            </section>
+
+            <section class="artistassiociationPic">
+                <img src="images/artist association.png" alt="footer logo" class="footerLogo">
+            </section>
+
+            <nav class="socialmedias" aria-label="Social media links">
+                <a href="https://www.facebook.com/ReginaHonaArtist/" aria-label="Facebook">
+                    <img src="images/" alt="facebook icon">
+                </a>
+
+                <a href="https://www.instagram.com/reginahonaart/" aria-label="Instagram">
+                    <img src="images/" alt="instagram icon">
+                </a>
+
+                <a href="mailto:reginahona@gmail.com" aria-label="Email">
+                    <img src="images/" alt="email icon">
+                </a>
+            </nav>
+
+            <section class="copyright">
+                <p>Copyright Regina Hona Fine Art 2011-2025</p>
+                <p>All rights reserved. Website Terms of Use</p>
+                <p>Site by Abstract Ideas & Zoom Graphic Design</p>
+            </section>
+        </footer>
+    </section>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
