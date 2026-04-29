@@ -1,0 +1,38 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #FFFADE;
+    color: #5A3E00;
+    font-family: "Gothiic A1", sans-serif, Arial;
+    overflow-x: hidden;
+}
+
+/* INTRO ANIMATION */
+
+.introPage {
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    
+}
+
+.introElements {
+    position: absolute;
+    inset: 0;
+    
+
+}
+
+.introText {
+    
+
+}
