@@ -1,5 +1,4 @@
 
-
 * {
     box-sizing: border-box;
 }
@@ -13,6 +12,7 @@ body {
     background-color: #FFFADE;
     color: #5A3E00;
     font-family: "Gothic A1", sans-serif, Arial;
+    font-family: "Gothiic A1", sans-serif, Arial;
     overflow-x: hidden;
 }
 
@@ -77,4 +77,3 @@ body {
 }
 
 /* Homepage / 
-
