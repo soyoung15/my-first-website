@@ -76,4 +76,57 @@ body {
     transition: opacity 0.7s ease;
 }
 
-/* Homepage / 
+/* HOMEPAGE */ 
+
+/* HEADER */
+
+.actualHomepage {
+    min-height: 100vh;
+    background-color: #FFFADE;
+}
+
+.siteHeader {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 18px 20px 12px;
+    background-color: #FFFADE;
+    border-bottom: 1px solid #FFE79B;
+}
+
+.hamburgerMenubar,
+.menubarClose {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.hamburgerMenubar img,
+.menubarClose img {
+    width: 34px
+    height: auto;
+    display: block;
+}
+
+.logoToHome {
+    grid-column: 2;
+}
+
+.homepageLogo {
+    width: 128px;
+    display: block;
+}
+
+.shoppingcartLink {
+    justify-self: end;
+}
+
+.shoppingcartIcon {
+    width: 32px;
+    display: block;
+}
+
