@@ -170,3 +170,27 @@ body {
 .navigationList a: hover {
     text-decoration: underline;
 }
+
+/* MAIN CONTENT */
+
+.herobanner {
+    padding 28px 20px 44px;
+    text-align: center;
+}
+
+.herobanner h1 {
+    max-width: 780px;
+    margin: 0 auto 24px;
+    font-family: "IM Fell English", Georgia, Serif;
+    font-size: 1.45rem;
+    line-height: 1.35;
+    font-weight: normal;
+    color: #5A3E00;
+}
+
+.heroimage {
+    width: 100%;
+    max-width: 900px;
+    display: block;
+    margin: 0 auto;
+}
