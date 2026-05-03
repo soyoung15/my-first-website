@@ -130,3 +130,43 @@ body {
     display: block;
 }
 
+/* HAMBURGER MENU */
+
+.mobileNavi {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    width: 76%;
+    max-width: 330px;
+    height: 100vh;
+    padding: 36px 28px;
+    background-color: #FFE79B
+    transform: translateX(-100%);
+    transition: transform 0.35s;
+}
+
+.menubarClose {
+    transform: translateX(0);
+}
+
+.menubarList {
+    list-style: none;
+    padding: 70px 0 0;
+    margin: 0;
+}
+
+.menubarList li {
+    margin-bottom: 26px;
+}
+
+.menubarList a {
+    color: #5A3E00;
+    text-decoration: none;
+    font-family: "IM Fell English", Georgia, Serif;
+    font-size: 1.35rem;
+}
+
+.navigationList a: hover {
+    text-decoration: underline;
+}
