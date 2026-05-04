@@ -334,3 +334,80 @@ body {
     font-size: 0.75rem;
     line-height: 1.3;
 }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ADJUSTING TO DESKTOP SIZE */
+
+@media (min-width: 900px) {
+    .siteHeader {
+        padding: 20px 55px 15px 55px;
+    }
+
+    .logoToHome{
+        width: 150px;
+    }
+
+    .hamburgerMenubar img {
+        width: 36px;
+    }
+
+    .shoppingcartIcon {
+        width: 36px;
+    }
+
+    .herobanner {
+        padding: 35px 55px 55px 55px;
+    }
+
+    .herobanner h1 {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    .heroimage {
+        width: 100%;
+        max-width: 1000px;
+        max-height: 330px;
+        object-fit: cover;
+    }
+
+    .previewGallery {
+        padding: 45px 55px;
+    }
+
+    .previewGallery h2 {
+        font-size: 20px;
+    }
+
+    .previewShop {
+        padding: 45px 55px;
+    }
+    
+    .artworkCards {
+        grid-template-columns: repeat(9, 1fr);
+        gap: 12px;
+        max-width: 1180px;
+    }
+
+    .previewButton {
+        margin-top: 25px;
+        padding: 8px 38px;
+        font-size: 14px;
+    }
+
+    .footer {
+        max-width: 1000px;
+        margin: 60px auto 40px auto;
+    }
+}
