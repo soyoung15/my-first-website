@@ -26,3 +26,7 @@ introPage.addEventListener("click", function () {
 hamburgerMenubar.addEventListener("click", function () {
     mobileNavi.classList.add("open");
 });
+
+menubarClose.addEventListener("click", function () {
+    mobileNavi.classList.remove("open");
+});
