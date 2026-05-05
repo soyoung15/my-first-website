@@ -12,7 +12,7 @@ body {
     background-color: #FFFADE;
     color: #5A3E00;
     font-family: "Gothic A1", sans-serif, Arial;
-    font-family: "Gothiic A1", sans-serif, Arial;
+    font-family: "Gothic A1", sans-serif, Arial;
     overflow-x: hidden;
 }
 
@@ -29,45 +29,47 @@ body {
 }
 
 .introBgimage {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    filter: brightness(72%);
-}
-
-.introElements {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    text-align: center;
+    object-position: center 80%;
+    filter: brightness(75%);
 }
 
 .introLogo {
-    width: 180px;
-    max-width: 65%;
-    margin-bottom: 26px;
+    position: absolute;
+    width: 260px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 0.8s ease;
+}
+
+.introLogo.moveup {
+    top: 10%;
 }
 
 .introText {
-    max-width: 560px;
+    position: absolute;
     margin: 0;
     color: #EFB85B;
     font-family: "IM Fell English", Georgia, serif;
-    font-size: 1.4rem;
-    line-height: 1.4;
+    font-size: 1rem;
+    line-height: 1.25;
+    width: 320px;
+    text-align: center;
     opacity: 0;
-    transform: translateY(18px);
+    bottom: 10%;
+    left:50%;
+    transform: translate(-50%, 20px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .introText.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
 }
 
 /* HOMEPAGE */ 
@@ -101,9 +103,8 @@ body {
 
 .hamburgerMenubar img,
 .menubarClose img {
-    width: 34px
+    width: 34px;
     height: auto;
-    display: block;
 }
 
 .logoToHome {
@@ -126,18 +127,8 @@ body {
 
 /* HAMBURGER MENU */
 
-.mobileNavi {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 900;
-    width: 76%;
-    max-width: 330px;
-    height: 100vh;
-    padding: 36px 28px;
-    background-color: #FFE79B
-    transform: translateX(-100%);
-    transition: transform 0.35s;
+.mobileNavi.open {
+    transform: translateX(0);
 }
 
 .menubarClose {
@@ -169,7 +160,6 @@ body {
 
 .herobanner {
     padding 28px 20px 44px;
-    text-align: center;
 }
 
 .herobanner h1 {
@@ -182,7 +172,7 @@ body {
     color: #5A3E00;
 }
 
-.heroimage {
+.herobannerImage {
     width: 100%;
     max-width: 900px;
     display: block;
@@ -210,8 +200,6 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
-    max-width: 1080px;
-    margin: 0 auto;
 }
 
 .artworkCards {
@@ -221,15 +209,15 @@ body {
 }
 
 .artworkdCards:nth-child(2) {
-    animation-delay: 0.15s;
+    animation-delay: 0.1s;
 }
 
 .artworkdCards:nth-child(3) {
-    animation-delay: 0.15s;
+    animation-delay: 0.2s;
 }
 
 .artworkdCards:nth-child(4) {
-    animation-delay: 0.15s;
+    animation-delay: 0.3s;
 }
 
 .artworkdCards:nth-child(5) {
@@ -289,11 +277,7 @@ body {
 }
 
 .insiderlistText p {
-    max-width: 430px;
     margin 0 auto;
-    font-family: "Gothic A1", sans-serif, Arial";
-    font-size: 0.9rem;
-    line-height: 1.5;
 }
 
 .artistassociationPic {
@@ -394,7 +378,7 @@ body {
         padding: 45px 55px;
     }
     
-    .artworkCards {
+    .galleryAnimation {
         grid-template-columns: repeat(9, 1fr);
         gap: 12px;
         max-width: 1180px;
