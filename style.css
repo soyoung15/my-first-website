@@ -353,10 +353,6 @@ main,
         margin: 0 auto;
     }
 
-    .siteHeader {
-        padding: 18px 50px 12px;
-    }
-
     .logoToHome{
         width: 125px;
     }
@@ -367,7 +363,7 @@ main,
     }
 
     .herobanner {
-        padding: 26px 50px 28px;
+        padding-top: 26px;
     }
 
     .herobanner h1 {
@@ -384,7 +380,7 @@ main,
 
     .previewGallery,
     .previewShop {
-        padding: 28px 50px 28px;
+        padding: 28px 28px;
     }
 
     .previewGallery h2 {
