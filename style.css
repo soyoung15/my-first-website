@@ -1,6 +1,7 @@
 
 * {
     box-sizing: border-box;
+    font-family: "Gothic A1", sans-serif;
 }
 
 html {
@@ -11,7 +12,6 @@ body {
     margin: 0;
     background-color: #FFFADE;
     color: #5A3E00;
-    font-family: "Gothic A1", sans-serif;
     font-family: "Gothic A1", sans-serif;
     overflow-x: hidden;
 }
@@ -88,8 +88,9 @@ body {
 .siteHeader,
 main,
 .footer {
-    max-width: 1368px;
+
     margin: 0 auto;
+    width: 100%;
     background-color: #FFFADE;
 }
 
@@ -102,12 +103,14 @@ main,
 
 .siteHeader {
     position: sticky;
+    width: 100%;
+    max-width: 100%;
     top: 0;
     z-index: 100;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    padding: 18px 32px 14px;
+    padding: 18px 28px 14px;
     border-bottom: 1px solid #FFE79B;
 }
 
@@ -195,7 +198,6 @@ main,
 /* MAIN CONTENT */
 
 .herobanner {
-    padding 28px 0 0;
     text-align: center;
 }
 
@@ -219,31 +221,47 @@ main,
 
 .previewGallery,
 .previewShop {
-    padding: 48px 32px 52px;
+    padding: 48px 0 52px;
     text-align: center;
+    overflow: hidden;
 }
 
 .previewGallery h2 {
     max-width: 1368px;
-    margin: 0 auto 28px;
+    padding: 0 64px;
+    margin: 0 0 28px;
     text-align: left;
     font-family: "Gothic A1", sans-serif;
     font-size: 1rem;
+    font-weight: 600;
     color: #5A3E00;
 }
 
 .galleryAnimation,
 .shopAnimation {
-    max-width: 1368px;
-    margin: 0 auto;
-    display: grid;
+    padding: 0;
+    width: max-content;
+    margin: 0;
+    display: flex;
     grid-template-columns: repeat(9, 1fr);
     gap: 12px;
 }
 
+.galleryAnimation {
+    animation: movingGallery 18s linear infinite;
+}
+
+.shopAnimation {
+    animation: movingShop 18s linear infinite;
+}
+
+.artworkCards {
+    flex: 0 0 150px;
+}
+
 .artworkCards img {
     width: 100%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
 }
@@ -257,30 +275,37 @@ main,
     color: #5A3E00;
     font-family: "Gothic A1", sans-serif;
     font-size: 0.85rem;
+    text-decoration: none;
 }
 
 /* FOOTER */
 
 .footer {
     width: 100%;
+    max-width: 100%;
     margin: 0;
     background-color: #FFE79B;
     text-align: center;
     color: #5A3E00;
 }
 
+.insiderlistText {
+    padding: 28px 20px 0;
+}
+
 .insiderlistText h2 {
-    margin: 10px 10px 10px;
+    margin: 0 0 8px;
     font-family: "Gothic A1", sans-serif;
     font-size: 1.1rem;
     font-weight: normal;
 }
 
 .insiderlistText p {
-    margin 20px 10px 40px;
-    max-width: 1368px;
+    margin: 0 auto;
+    max-width: 420px;
     font-size: 0.8rem;
     line-height: 1.4;
+    text-align: center;
 }
 
 .artistassociationPic {
@@ -343,15 +368,31 @@ main,
     }
 }
 
+@keyframes movingGallery {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-1170px);
+    }
+    
+}
+
+@keyframes movingShop {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-1170px);
+    }
+    
+}
+
 /* ADJUSTING TO DESKTOP SIZE */
 
 @media (min-width: 390px) {
-    .siteHeader,
-    main,
-    .footer {
-        max-width: 1368px;
-        margin: 0 auto;
-    }
 
     .logoToHome{
         width: 125px;
@@ -380,7 +421,7 @@ main,
 
     .previewGallery,
     .previewShop {
-        padding: 28px 28px;
+        padding: 28px 0;
     }
 
     .previewGallery h2 {
@@ -390,14 +431,13 @@ main,
     
     .galleryAnimation,
     .shopAnimation {
-        grid-template-columns: repeat(9, 1fr);
+        display: flex;
         gap: 10px;
+        padding: 0;
     }
 
-    .artworkCards img {
-        width: 100%;
-        aspect-ratio: 1/1;
-        object-fit: cover;
+    .artworkCards {
+        flex: 0 0 120px;
     }
 
     .previewButton {
@@ -407,15 +447,11 @@ main,
     }
 
     .insiderlistText {
-        padding: 20px;
+        padding: 28px 20px 0;
     }
 
     .artistassociationPic {
         padding: 18px 20px;
-    }
-
-    .footer {
-        max-width: 1368px;
     }
 
     .socialmedias {

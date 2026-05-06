@@ -7,7 +7,12 @@ const hamburgerMenubar = document.getElementById("menu_bar");
 const menubarClose = document.getElementById("close_menu_bar");
 const mobileNavi = document.getElementById("mobile_navi");
 
-actualHomepage.style.display = "none";
+if (window.location.hash === "#actualHomepage") {
+    introPage.style.display = "none";
+    actualHomepage.style.display = "block";
+}   else {
+        actualHomepage.style.display = "none";
+}
 
 let tap = 0;
 
