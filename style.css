@@ -468,34 +468,52 @@ main,
 /* GALLERY */
 
 .gallery {
-    padding: 28px 24px 50px;
+    padding: 28px 24px 60px;
     background-color: #FFFADE;
+}
+
+.searchGallery {
+    position: relative;
+    max-width: 330px;
+    margin: 24 auto 46px;
+}
+
+.searchGallery img {
+    position: absolute;
+    width: 18px;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .searchGallery input {
     width: 100%;
-    padding: 12px 16px;
-    border: 1px solid;
+    padding: 12px 18px 12px 44px;
+    border: none;
+    border-radius: 18px;
     font-family: "Gothic A1", sans-serif;
-    border-radius: 14px;
+    border-radius: 18px;
     background-color: #FFE79B;
     color: #5A3E00;
 }
 
 .breadcrumbNavi {
-    margin: 0 0 20px;
+    max-width: 980px;
+    margin: 0 auto 8px;
     color: #5A3E00;
     font-family: "Gothic A1", sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
 }
 
 .ForYou {
-    padding: 36px 0;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 0 54px;
 }
 
 .ForYou h1,
 .galleryCategory h2 {
-    margin: 0 0 22px;
+    margin: 0 0 24px;
     color: #5A3E00;
     font-family: "Gothic A1", sans-serif;
     font-size: 1.2rem;
@@ -507,7 +525,7 @@ main,
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14px;
+    gap: 18px;
     overflow: hidden;
 }
 
@@ -519,52 +537,61 @@ main,
     box-shadow: 0 6px 14px rgba(90, 62, 0, 0.2);
 }
 
-.sliderartwork {
-    width: 120px;
-    height: 230px;
+.sliderArtwork {
+    width: 150px;
+    height: 200px;
     object-fit: cover;
+    flex-shrink: 0;
+    opacity: 80%;
 }
 
-.foryouButton {
+.foryouLeftButton,
+.foryouRightButton {
     position: absolute;
-    z-index: 3;
+    z-index: 4;
+    width: 26px;
+    height: 26px;
     border: none;
-    background-color: #EFB85B;
-    padding: 0;
+    border-radius: 6px;
+    background-color: #FFE79B;
+    padding: 3px;
     cursor: pointer;
 }
 
-.foryouButton img {
-    width: 28px;
-    height: auto;
+.foryouLeftButton img,
+.foryouRightButton img {
+    width: 100%;
+    height: 100%;
     display: block;
+    object-fit: contain;
 }
 
 .foryouLeftButton {
-    left: calc(50% - 125px);
+    left: calc(50%-122px);
 }
 
 .foryouRightButton {
-    right: calc(50% - 125px);
+    right: calc(50%-122px);
 }
 
 .categorySection {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 18px;
 }
 
 .categoryCover {
     position: relative;
     display: block;
     overflow: hidden;
+    border-radius: 10px;
     color: #FFFADE;
     text-decoration: none;
 }
 
 .categoryCover img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: 130px;
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
@@ -572,24 +599,41 @@ main,
 
 .categoryCover span {
     position: absolute;
-    left: 16px;
+    left: 18px;
     bottom: 14px;
+    color: #FFFADE;
     font-size: 1.2rem;
 }
 
-.categoryCover img {
-    transform: scale(1.04);
+.categoryCover:hover img {
+    transform: scale(1.06);
 }
 
 @media (min-width: 768px) {
-    .foryouSlider img {
-        width: 320px;
-        height: 400px;
+    .gallery {
+        padding: 38px 64px 80px;
     }
 
-    .sliderartwork img {
+    .foryouSlider {
+        gap: 22px;
+    }
+
+    .mainArtwork {
+        width: 250px;
+        height: 300px;
+    }
+
+    .sliderartwork {
         width: 180px;
-        height: 330px;
+        height: 250px;
+    }
+
+    .foryouLeftButton {
+        left: calc(50% - 140px);
+    }
+
+    .foryouRightButton {
+        right: calc(50% - 140px);
     }
 
     .categorySection {
