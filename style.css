@@ -468,24 +468,131 @@ main,
 /* GALLERY */
 
 .gallery {
-    padding 28px 24px 50px;
+    padding: 28px 24px 50px;
+    background-color: #FFFADE;
 }
 
 .searchGallery input {
     width: 100%;
     padding: 12px 16px;
-    border: 1px solid #FFE79B;
-    border-radius: 14px;
-    background-color: #
-}
-
-
-.breadcrumbNavi {
-    margin: 0 0 20px;
-    font-size: 0.8rem;
+    border: 1px solid;
     font-family: "Gothic A1", sans-serif;
+    border-radius: 14px;
+    background-color: #FFE79B;
     color: #5A3E00;
 }
 
+.breadcrumbNavi {
+    margin: 0 0 20px;
+    color: #5A3E00;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.8rem;
+}
 
+.ForYou {
+    padding: 36px 0;
+}
 
+.ForYou h1,
+.galleryCategory h2 {
+    margin: 0 0 22px;
+    color: #5A3E00;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.2rem;
+
+}
+
+.foryouSlider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    overflow: hidden;
+}
+
+.mainArtwork {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    z-index: 2;
+    box-shadow: 0 6px 14px rgba(90, 62, 0, 0.2);
+}
+
+.sliderartwork {
+    width: 120px;
+    height: 230px;
+    object-fit: cover;
+}
+
+.foryouButton {
+    position: absolute;
+    z-index: 3;
+    border: none;
+    background-color: #EFB85B;
+    padding: 0;
+    cursor: pointer;
+}
+
+.foryouButton img {
+    width: 28px;
+    height: auto;
+    display: block;
+}
+
+.foryouLeftButton {
+    left: calc(50% - 125px);
+}
+
+.foryouRightButton {
+    right: calc(50% - 125px);
+}
+
+.categorySection {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.categoryCover {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    color: #FFFADE;
+    text-decoration: none;
+}
+
+.categoryCover img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.categoryCover span {
+    position: absolute;
+    left: 16px;
+    bottom: 14px;
+    font-size: 1.2rem;
+}
+
+.categoryCover img {
+    transform: scale(1.04);
+}
+
+@media (min-width: 768px) {
+    .foryouSlider img {
+        width: 320px;
+        height: 400px;
+    }
+
+    .sliderartwork img {
+        width: 180px;
+        height: 330px;
+    }
+
+    .categorySection {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
