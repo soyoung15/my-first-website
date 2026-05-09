@@ -9,7 +9,7 @@ const hamburgerMenubar = document.getElementById("menu_bar");
 const menubarClose = document.getElementById("close_menu_bar");
 const mobileNavi = document.getElementById("mobile_navi");
 
-if (window.location.hash === "#actual_Homepage") {
+if (window.location.hash === "#actual_homepage") {
     introPage.style.display = "none";
     actualHomepage.style.display = "block";
 }   else {
@@ -59,8 +59,8 @@ if (slider_artwork && left_artwork && right_artwork && going_left && going_right
     let currentArtwork = 1;
 
     function showImages() {
-        let leftNumber = currentImage - 1;
-        let rightNumber = currentImage + 1;
+        let leftNumber = currentArtwork - 1;
+        let rightNumber = currentArtwork + 1;
 
         if (leftNumber < 0) {
             leftNumber = foryouArtwork.length - 1;
@@ -74,7 +74,7 @@ if (slider_artwork && left_artwork && right_artwork && going_left && going_right
         slider_artwork.src = foryouArtwork[currentArtwork];
         right_artwork.src = foryouArtwork[rightNumber];
     }
-    foryouRightButton.addEventListener("click", function () {
+    going_right.addEventListener("click", function () {
         currentArtwork++;
 
         if (currentArtwork >= foryouArtwork.length) {
@@ -84,10 +84,10 @@ if (slider_artwork && left_artwork && right_artwork && going_left && going_right
         showImages();
     });
 
-    foryouLeftButton.addEventListener("click", function () {
+    going_left.addEventListener("click", function () {
         currentArtwork--;
 
-        if (currentArtwork < 0 {
+        if (currentArtwork < 0) {
             currentArtwork = foryouArtwork.length - 1;
         }
 
