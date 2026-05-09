@@ -5,38 +5,42 @@ const introText = document.getElementById("intro_text");
 const actualHomepage = document.getElementById("actual_homepage");
 const introLogo = document.querySelector(".introLogo");
 
+if (introPage && introText && actualHomepage && introLogo) {
+    if (window.location.hash === "#actual_homepage") {
+        introPage.style.display = "none";
+        actualHomepage.style.display = "block";
+    }   else {
+            actualHomepage.style.display = "none";
+    }
+
+    let tap = 0;
+
+    introPage.addEventListener("click", function () {
+        tap++;
+
+        if (tap === 1) {
+            introLogo.classList.add("moveup");
+            introText.classList.add("show");
+        } else {
+            introPage.style.display = "none";
+            actualHomepage.style.display = "block";
+        }
+    });
+}
+
 const hamburgerMenubar = document.getElementById("menu_bar");
 const menubarClose = document.getElementById("close_menu_bar");
 const mobileNavi = document.getElementById("mobile_navi");
 
-if (window.location.hash === "#actual_homepage") {
-    introPage.style.display = "none";
-    actualHomepage.style.display = "block";
-}   else {
-        actualHomepage.style.display = "none";
+if (hamburgerMenubar && menubarClose && mobileNavi) {
+    hamburgerMenubar.addEventListener("click", function () {
+        mobileNavi.classList.add("open");
+    });
+
+    menubarClose.addEventListener("click", function () {
+        mobileNavi.classList.remove("open");
+    });
 }
-
-let tap = 0;
-
-introPage.addEventListener("click", function () {
-    tap++;
-
-    if (tap === 1) {
-        introLogo.classList.add("moveup");
-        introText.classList.add("show");
-    } else {
-        introPage.style.display = "none";
-        actualHomepage.style.display = "block";
-    }
-});
-
-hamburgerMenubar.addEventListener("click", function () {
-    mobileNavi.classList.add("open");
-});
-
-menubarClose.addEventListener("click", function () {
-    mobileNavi.classList.remove("open");
-});
 
 /* GALLERY */
 
@@ -50,6 +54,7 @@ if (slider_artwork && left_artwork && right_artwork && going_left && going_right
     const foryouArtwork = [
         "images/gallery/water/water-13.png",
         "images/gallery/people/people-10.png",
+        "images/gallery/people/people-11.png",
         "images/gallery/people/people-3.png",
         "images/gallery/archive/archive-16.png",
         "images/gallery/archive/archive-8.png",
