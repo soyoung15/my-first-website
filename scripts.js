@@ -101,3 +101,10 @@ if (slider_artwork && left_artwork && right_artwork && going_left && going_right
 
     showImages();
 }
+
+/* SEARCH RESULT GALLERY */
+
+const search_input = document.getElementById("search_input");
+const result_title = document.getElementById("result_title");
+const search_category = document.getElementById("result_category");
+const search_title = document.getElementById("search_title");

@@ -5,7 +5,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regina Hona - Gallery</title>
+    <title>Regina Hona - Resultpage_gallery</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -42,59 +42,54 @@
             <section class="gallery">
                 <section class="searchGallery">
                     <img src="images/icons/search.png" alt="search bar icon">
-                    <input type="text" placeholder="Search">
+                    <input type="text" id="search_input" placeholder="Search">
                 </section>
 
                 <p class="breadcrumbNavi">
                     <a href="index.html#actual_homepage"><i>Home</i></a>
                     <span>&gt;</span>
                     <a href="gallery.html"><i>Gallery</i></a>
+                    <span>&gt;</span>
+                    <a href="people.html" id="breadcrumbNavi_collection"></a>
+                    <span id="breadcrumbNavi_result"></span>
                 </p>
 
-                <section class="ForYou">
-                    <h1>For you</h1>
+                <section class="result">
+                    <h1>Result</h1>
+
+                    <div class="resultGallery">
+                        <img src="images/gallery/people/people-7.png" alt="charles" id="result_artwork" class="resultArtwork">
+                        <p class="resultTitle" id="result_title"></p>
+                        <p class="resultCategory" id="result_category"></p>
+                    </div>
+                </section>
+
+                <section class="artworkSuggestion">
+                    <h2>You might also like</h2>
 
                     <div class="foryouSlider">
-                        <img src="images/gallery/water/water-13.png" alt="left artwork" class="sliderArtwork" id="left_artwork">
+                        <img src="images/gallery/people/people-5.png" alt="left artwork" class="sliderArtwork" id="left_artwork">
 
                         <button id="going_left" class="foryouLeftButton" aria-label="Going left">
                             <img src="images/icons/left.png" alt="going left icon">
                         </button>
 
-                        <img src="images/gallery/people/people-10.png" alt="middle artwork" class="mainArtwork" id="slider_artwork">
+                        <img src="images/gallery/people/people-3.png" alt="middle artwork" class="mainArtwork" id="slider_artwork">
 
                         <button id="going_right" class="foryouRightButton" aria-label="Going right">
                             <img src="images/icons/right.png" alt="going right icon">
                         </button>
                         
-                        <img src="images/gallery/people/people-11.png" alt="right artwork" class="sliderArtwork" id="right_artwork">
+                        <img src="images/gallery/people/people-12.png" alt="right artwork" class="sliderArtwork" id="right_artwork">
                     </div>
+
+                    <a href="gallery.html" class="naviBacktoGallery" id="goingback_navi">
+                        &lt;&lt; Explore <span id="goingback_collection"></span>
+                    </a>
                 </section>
-
-                <section class="galleryCategory">
-                    <h2>Explore</h2>
-
-                    <div class="categorySection">
-                        <a href="water.html" class="categoryCover">
-                            <img src="images/gallery/water/water-15.png" alt="water gallery cover">
-                            <span>WATER</span>
-                        </a>
-
-                        <a href="people.html" class="categoryCover">
-                            <img src="images/gallery/people/people-8.png" alt="people gallery cover">
-                            <span>PEOPLE</span>
-                        </a>
-
-                        <a href="archive.html" class="categoryCover">
-                            <img src="images/gallery/archive/archive-4.png" alt="archive gallery cover">
-                            <span>ARCHIVE</span>
-                        </a>
-                    </div>
-                </section>
-
             </section>
         </main>
-        
+
         <footer class="footer">
             <section class="insiderlistText">
                 <h2>Join my Insiders List</h2>

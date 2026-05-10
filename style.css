@@ -392,80 +392,6 @@ main,
     
 }
 
-/* ADJUSTING TO DESKTOP SIZE */
-
-@media (min-width: 390px) {
-
-    .logoToHome{
-        width: 125px;
-    }
-
-    .hamburgerMenubar img,
-    .shoppingcartIcon {
-        width: 34px;
-    }
-
-    .herobanner {
-        padding-top: 26px;
-    }
-
-    .herobanner h1 {
-        font-size: 0.85rem;
-        margin-bottom: 22px;
-    }
-
-    .herobannerImage {
-        width: 100%;
-        max-height: 250px;
-        object-fit: cover;
-        object-position: center 72%;
-    }
-
-    .previewGallery,
-    .previewShop {
-        padding: 28px 0;
-    }
-
-    .previewGallery h2 {
-        padding: 0 64px;
-        font-size: 1.15rem;
-        text-align: left;
-    }
-    
-    .galleryAnimation,
-    .shopAnimation {
-        display: flex;
-        gap: 10px;
-        padding: 0;
-    }
-
-    .artworkCards {
-        flex: 0 0 120px;
-    }
-
-    .previewButton {
-        margin-top: 22px;
-        padding: 8px 42px;
-        font-size: 0.9rem;
-    }
-
-    .insiderlistText {
-        padding: 28px 20px 0;
-    }
-
-    .artistassociationPic {
-        padding: 18px 20px;
-    }
-
-    .socialmedias {
-        padding: 14px 20px 6px;
-    }
-
-    .copyright {
-        padding: 6px 20px 18px;
-    }
-}
-
 /* GALLERY */
 
 .gallery {
@@ -630,7 +556,145 @@ main,
     transform: scale(1.05);
 }
 
+/*SEARCH RESULT GALLERY */
+
+.searchGallery {
+    padding: 0 0 40px;
+}
+
+.searchGallery h1,
+.artworkSuggestion h2 {
+    margin: 0 0 20px;
+    text-align: left;
+    color: #5A3E00;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.2rem;
+}
+
+.resultArtwork {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resultArtwork img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.resultTitle {
+    margin: 0;
+    color: #5A3E00;
+    font-family: "IM Fell English", Georgia, Serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.resultCategory {
+    margin: 0;
+    color: #5A3E00;
+    font-family: "IM Fell English", Georgia, Serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.artworkSuggestion {
+    padding: 0 0 40px;
+}
+
+.naviBacktoGallery {
+    display: block;
+    margin-top: 24px;
+    color: #91918a;
+    font-family: "IM Fell English", Georgia, Serif;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.naviBacktoGallery:hover {
+    color: #EFB85B
+}
+
+/* ADJUSTING TO DESKTOP SIZE */
+
 @media (min-width: 768px) {
+
+    /* HOMEPAGE */
+
+    .logoToHome{
+        width: 125px;
+    }
+
+    .hamburgerMenubar img,
+    .shoppingcartIcon {
+        width: 34px;
+    }
+
+    .herobanner {
+        padding-top: 26px;
+    }
+
+    .herobanner h1 {
+        font-size: 0.85rem;
+        margin-bottom: 22px;
+    }
+
+    .herobannerImage {
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+        object-position: center 72%;
+    }
+
+    .previewGallery,
+    .previewShop {
+        padding: 28px 0;
+    }
+
+    .previewGallery h2 {
+        padding: 0 64px;
+        font-size: 1.15rem;
+        text-align: left;
+    }
+    
+    .galleryAnimation,
+    .shopAnimation {
+        display: flex;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .artworkCards {
+        flex: 0 0 120px;
+    }
+
+    .previewButton {
+        margin-top: 22px;
+        padding: 8px 42px;
+        font-size: 0.9rem;
+    }
+
+    .insiderlistText {
+        padding: 28px 20px 0;
+    }
+
+    .artistassociationPic {
+        padding: 18px 20px;
+    }
+
+    .socialmedias {
+        padding: 14px 20px 6px;
+    }
+
+    .copyright {
+        padding: 6px 20px 18px;
+    }
+
+    /*GALLERY*/
+
     .gallery {
         padding: 38px 64px 80px;
     }
