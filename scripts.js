@@ -102,9 +102,115 @@ if (slider_artwork && left_artwork && right_artwork && going_left && going_right
     showImages();
 }
 
-/* SEARCH RESULT GALLERY */
+/* SEARCH RESULT */
 
 const search_input = document.getElementById("search_input");
+
+const allArtworks = [
+    {
+        name: "Charles",
+        image: "images/gallery/people/people-7.png",
+        category: "People",
+        categoryPage: "people.html",
+        related: [
+            "images/gallery/people/people-1.png",
+            "images/gallery/people/people-2.png",
+            "images/gallery/people/people-3.png",
+            "images/gallery/people/people-4.png",
+            "images/gallery/people/people-5.png",
+            "images/gallery/people/people-6.png",
+            "images/gallery/people/people-8.png",
+        ]
+    },
+];
+
+if (search_input) {
+    search_input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            const typed = search_input.value.trim();
+            if (typed !== "") {
+                window.location.href = "result.html?search=" + encodeURIComponent(typed);
+            }
+        }
+    });
+}
+
+/* SEARCH RESULT GALLERY */
+
+const result_artwork = document.getElementById("result_artwork")
 const result_title = document.getElementById("result_title");
-const search_category = document.getElementById("result_category");
-const search_title = document.getElementById("search_title");
+const result_category = document.getElementById("result_category");
+const breadcrumbNavi = document.getElementById("breadcrumbNavi_collection");
+const breadcrumbNavi_result = document.getElementById("breadcrumbNavi_result");
+const goingback_navi = document.getElementById("goingback_navi");
+const goingback_category = document.getElementById("goingback_category");
+
+if (result_artwork && result_title) {
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("search");
+
+    if (query) {
+        const found = allArtworks.find(function(artwork) {
+            return artwork.name.toLowerCase() === query.toLowerCase();
+        });
+
+        if (search_input) {
+            search_input.value = query;
+        }
+
+        if (found) {
+            /* SHOWING THE RESULT ARTWORK */
+            result_artwork.src = found.image;
+            result_artwork.alt = found.name;
+            result_title.textContent = found.name;
+            result_category.textContent = "From " + found.category + " collection";
+
+            /* BREADCRUMB */
+            breadcrumbNavi.textContent = found.category;
+            breadcrumbNavi.href = found.categoryPage;
+            breadcrumbNavi_result.textContent = found.name;
+            goingback_navi.href = found.categoryPage;
+            goingback_category.textContent = found.category;
+
+            /* SUGGESTION */
+            const related_artworks = found.related;
+            let current = 1;
+
+            const left_artwork = document.getElementById("left_artwork");
+            const middle_artwork = document.getElementById("slider_artwork");
+            const right_artwork = document.getElementById("right_artwork");
+
+            function showRelated() {
+                let leftIndex = current - 1;
+                let rightIndex = current + 1;
+
+                if (leftIndex < 0) leftIndex = related_artworks.length - 1;
+                if (rightIndex >= related_artworks.length) rightIndex = 0;
+
+                left_artwork.src = related_artworks[leftIndex];
+                middle_artwork.src = related_artworks[current];
+                right_artwork.src = related_artworks[rightIndex];
+            }
+
+            document.getElementById("going_left").addEventListener("click", function() {
+                current--;
+                if (current < 0) current = related_artworks.length - 1;
+                showRelated();
+            });
+
+            document.getElementById("going_right").addEventListener("click", function() {
+                current++;
+                if (current >= related_artworks.length) current = 0;
+                showRelated();
+            });
+
+            showRelated();
+
+        } else {
+            /* NO RESULT FOUND */
+            result_artwork.style.display = "none";
+            result_title.textContent = "No results found for \"" + query + "\"";
+            result_category.style.display = "none";
+        }
+    }
+}

@@ -403,6 +403,7 @@ main,
     position: relative;
     max-width: 550px;
     margin: 24px auto 32px;
+    padding: 0;
 }
 
 .searchGallery img {
@@ -411,6 +412,7 @@ main,
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1;
 }
 
 .searchGallery input {
@@ -559,7 +561,7 @@ main,
 /*SEARCH RESULT GALLERY */
 
 .searchGallery {
-    padding: 0 0 40px;
+    padding: 0;
 }
 
 .searchGallery h1,
