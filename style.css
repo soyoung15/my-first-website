@@ -633,11 +633,11 @@ main,
 /* CATEGORY */
 
 .categoryPage {
-    padding: 34px 24px 70px;
+    padding: 60px 24px 80px;
 }
 
 .categoryPage h1 {
-    margin: 0 0 20px;
+    margin: 20px 0 20px;
     text-align: left;
     color: #5A3E00;
     font-family: "IM Fell English", Georgia, Serif;
@@ -808,12 +808,12 @@ main,
     /* PEOPLE */
 
     .categoryPage {
-        padding: 38px 64px 80px;
+        padding: 60px 70px 80px;
     }
 
     .categoryGrid {
         grid-template-columns: repeat(6, 1fr);
-        gap: 18px;
+        gap: 20px 30px;
     }
 
     .categoryArtworks span {
