@@ -230,11 +230,11 @@ main,
 
 .previewGallery h2 {
     max-width: 1368px;
-    padding: 0 64px;
-    margin: 0 0 28px;
+    padding: 0 24px;
+    margin: 0 0 20px;
     text-align: left;
     font-family: "Gothic A1", sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #5A3E00;
 }
@@ -427,8 +427,9 @@ main,
     }
 
     .previewGallery h2 {
+        padding: 0 64px;
         font-size: 1.15rem;
-        margin-bottom: 22px;
+        text-align: left;
     }
     
     .galleryAnimation,
@@ -474,8 +475,8 @@ main,
 
 .searchGallery {
     position: relative;
-    max-width: 330px;
-    margin: 24 auto 46px;
+    max-width: 550px;
+    margin: 24px auto 32px;
 }
 
 .searchGallery img {
@@ -492,28 +493,39 @@ main,
     border: none;
     border-radius: 18px;
     font-family: "Gothic A1", sans-serif;
+    font-size: 0.9rem;
     border-radius: 18px;
     background-color: #FFE79B;
     color: #5A3E00;
 }
 
 .breadcrumbNavi {
-    max-width: 980px;
-    margin: 0 auto 8px;
-    color: #5A3E00;
+    margin: 0 0 8px;
     font-family: "Gothic A1", sans-serif;
     font-size: 0.6rem;
+    font-weight: 50;
+}
+
+.breadcrumbNavi a {
+    color: #91918a;
+    text-decoration: none;
+    trasntion: color 0.3s ease;
+}
+
+.breadcrumbNavi a:hover {
+    color: #EFB85B
 }
 
 .ForYou {
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
     padding: 0 0 54px;
 }
 
 .ForYou h1,
 .galleryCategory h2 {
-    margin: 0 0 24px;
+    margin: 0 0 20px;
+    text-align: left;
     color: #5A3E00;
     font-family: "Gothic A1", sans-serif;
     font-size: 1.2rem;
@@ -530,8 +542,8 @@ main,
 }
 
 .mainArtwork {
-    width: 220px;
-    height: 280px;
+    width: 200px;
+    height: 250px;
     object-fit: cover;
     z-index: 2;
     box-shadow: 0 6px 14px rgba(90, 62, 0, 0.2);
@@ -549,6 +561,7 @@ main,
 .foryouRightButton {
     position: absolute;
     z-index: 4;
+    top: 50%;
     width: 26px;
     height: 26px;
     border: none;
@@ -556,6 +569,7 @@ main,
     background-color: #FFE79B;
     padding: 3px;
     cursor: pointer;
+    transform: translateY(-50%);
 }
 
 .foryouLeftButton img,
@@ -567,25 +581,27 @@ main,
 }
 
 .foryouLeftButton {
-    left: calc(50%-122px);
+    left: calc(50% - 110px);
 }
 
 .foryouRightButton {
-    right: calc(50%-122px);
+    right: calc(50% - 110px);
 }
 
 .categorySection {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
 }
 
 .categoryCover {
     position: relative;
-    display: block;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
     border-radius: 10px;
-    color: #FFFADE;
+    color: #5A3E00;
     text-decoration: none;
 }
 
@@ -593,20 +609,25 @@ main,
     width: 100%;
     height: 130px;
     object-fit: cover;
+    object-position: center 10%;
     display: block;
+    border-radius: 6px;
     transition: transform 0.3s ease;
 }
 
 .categoryCover span {
-    position: absolute;
-    left: 18px;
-    bottom: 14px;
-    color: #FFFADE;
-    font-size: 1.2rem;
+    margin-top: 10px;
+    position: static;
+    display: block;
+    color: #5A3E00;
+    font-family: "IM Fell English", Georgia, Serif;
+    font-size: 1rem;
+    font-weight: 350;
+    text-align: center;
 }
 
 .categoryCover:hover img {
-    transform: scale(1.06);
+    transform: scale(1.05);
 }
 
 @media (min-width: 768px) {
@@ -629,11 +650,11 @@ main,
     }
 
     .foryouLeftButton {
-        left: calc(50% - 140px);
+        left: calc(50% - 135px);
     }
 
     .foryouRightButton {
-        right: calc(50% - 140px);
+        right: calc(50% - 135px);
     }
 
     .categorySection {
