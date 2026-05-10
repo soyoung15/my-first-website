@@ -400,12 +400,19 @@ main,
 }
 
 .searchGallery {
+    display: flex;
     position: relative;
     max-width: 550px;
     margin: 24px auto 32px;
     padding: 0;
 }
 
+.searchbarButton {
+    padding: 0 0 0 16px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
 .searchGallery img {
     position: absolute;
     width: 18px;
@@ -562,9 +569,12 @@ main,
 
 .searchGallery {
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
-.searchGallery h1,
+.result h1,
 .artworkSuggestion h2 {
     margin: 0 0 20px;
     text-align: left;
@@ -572,22 +582,22 @@ main,
     font-family: "Gothic A1", sans-serif;
     font-size: 1.2rem;
 }
-
-.resultArtwork {
+.resultGallery {
+    padding: 0 0 36px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 4px;
 }
 
 .resultArtwork img {
-    width: 180px;
-    height: 220px;
+    width: 160px;
+    height: 200px;
     object-fit: cover;
     display: block;
 }
 
 .resultTitle {
-    margin: 0;
+    margin: 10px 0 0;
     color: #5A3E00;
     font-family: "IM Fell English", Georgia, Serif;
     font-size: 0.9rem;
@@ -595,11 +605,11 @@ main,
 }
 
 .resultCategory {
-    margin: 0;
+    margin: 4px 0 0;
     color: #5A3E00;
     font-family: "IM Fell English", Georgia, Serif;
     font-size: 0.7rem;
-    font-weight: 600;
+    font-weight: 400;
     font-style: italic;
 }
 
@@ -611,7 +621,7 @@ main,
     display: block;
     margin-top: 24px;
     color: #91918a;
-    font-family: "IM Fell English", Georgia, Serif;
+    font-family: "Gothic A1", sans-serif;
     font-size: 0.7rem;
     text-align: center;
 }
@@ -725,5 +735,10 @@ main,
 
     .categorySection {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .resultArtwork {
+        width: 200px;
+        height: 240px;
     }
 }

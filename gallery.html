@@ -40,10 +40,12 @@
 
         <main>
             <section class="gallery">
-                <section class="searchGallery">
-                    <img src="images/icons/search.png" alt="search bar icon">
-                    <input type="text" placeholder="Search">
-                </section>
+                <form class="searchGallery" id="search_function" action="result_gallery.html" method="get">
+                    <button type="submit" class="searchbarButton" aria-label="Search">
+                        <img src="images/icons/search.png" alt="search bar icon">
+                    </button>
+                    <input type="text" id="search_input" name="search" placeholder="Search">
+                </form>
 
                 <p class="breadcrumbNavi">
                     <a href="index.html#actual_homepage"><i>Home</i></a>

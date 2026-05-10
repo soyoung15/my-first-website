@@ -104,8 +104,6 @@ if (slider_artwork && left_artwork && right_artwork && going_left && going_right
 
 /* SEARCH RESULT */
 
-const search_input = document.getElementById("search_input");
-
 const allArtworks = [
     {
         name: "Charles",
@@ -124,13 +122,17 @@ const allArtworks = [
     },
 ];
 
-if (search_input) {
-    search_input.addEventListener("keydown", function (e) {
-        if (e.key === "Enter") {
-            const typed = search_input.value.trim();
-            if (typed !== "") {
-                window.location.href = "result.html?search=" + encodeURIComponent(typed);
-            }
+const search_function = document.getElementById("search_function");
+const search_input = document.getElementById("search_input");
+
+if (search_function && search_input) {
+    search_function.addEventListener("submit", function (event) {
+        event.preventDefault();
+        
+        const typed = search_input.value.trim();
+
+        if (typed !== "") {
+            window.location.href = "result_gallery.html?search=" + encodeURIComponent(typed);
         }
     });
 }
