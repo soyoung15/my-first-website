@@ -693,6 +693,34 @@ main,
     background-color: rgba(63, 63, 63, 0.55);
 }
 
+/* SHOP */
+
+.shop {
+    padding: 28px 24px 60px;
+}
+
+.filterButton {
+    padding: 0;
+    flex-shrink: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.filterButton img {
+    width: 28px;
+    height: auto;
+    display: block;
+}
+
+.productList {
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: 1fr;
+    gap: 28px;
+}
+
+.product
 /* ADJUSTING TO DESKTOP SIZE */
 
 @media (min-width: 768px) {
