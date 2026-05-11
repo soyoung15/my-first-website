@@ -216,3 +216,15 @@ if (result_artwork && result_title) {
         }
     }
 }
+
+/* SHOP */
+/* FILTER FUNCTION */
+
+const filter_button = document.getElementById("filter_button");
+const filter_option = document.getElementById("filter_option");
+
+if (filter_button && filter_option) {
+    filter_button.addEventListener("click", function() {
+        filter_option.classList.toggle("open");
+    });
+}
