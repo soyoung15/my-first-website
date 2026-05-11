@@ -120,6 +120,24 @@ const allArtworks = [
             "images/gallery/people/people-8.png",
         ]
     },
+
+    {
+        name: "What's On The Menu?",
+        image: "images/productlist/what's on the menu.png",
+        category: "Shop",
+        categoryPage: "shop.html",
+        price: "$490.00",
+        related: [
+            "images/productlist/grandmother's gown.png",
+            "images/productlist/cave explorers.png",
+            "images/productlist/melb.png",
+            "images/productlist/shoreline.png",
+            "images/productlist/venetian.png",
+            "images/productlist/morning sunlight.png",
+            "images/productlist/Rowing in Hyde Park.png",
+        ]
+
+    },
 ];
 
 const search_function = document.getElementById("search_function");
@@ -165,7 +183,11 @@ if (result_artwork && result_title) {
             result_artwork.src = found.image;
             result_artwork.alt = found.name;
             result_title.textContent = found.name;
-            result_category.textContent = "From " + found.category + " collection";
+            if (found.price) {
+                result_category.textContent = found.price;
+            } else {
+                result_category.textContent = "From " + found.category + " collection";
+            }
 
             /* BREADCRUMB */
             breadcrumbNavi.textContent = found.category;
