@@ -171,7 +171,7 @@ if (result_artwork && result_title) {
 
     if (query) {
         const found = allArtworks.find(function(artwork) {
-            return artwork.name.toLowerCase() === query.toLowerCase();
+            return artwork.name.toLowerCase().replace("?", "") === query.toLowerCase().replace("?", "");
         });
 
         if (search_input) {
