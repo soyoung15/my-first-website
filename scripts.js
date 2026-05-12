@@ -292,3 +292,102 @@ if (product_list) {
         });
     });
 }
+
+/* PRODUCT DETAIL */
+
+const products = [
+    {
+        id: "shoreline",
+        name: "Shoreline",
+        price: "$1,290.00",
+        images: [
+            "images/productlist/shoreline.png",
+            "images/productlist/shoreline-2.png",
+            "images/productlist/shoreline-3.png",
+        ],
+        medium: "Pastel",
+        sku: "0608-P",
+        frame: "Unframed",
+        size: "40 x 40 cm (16\" x 16\")"
+    },
+    {
+        id: "what's_on_the_menu",
+        name: "What's On The Menu?",
+        price: "$490.00",
+        images: [
+            "images/productlist/what's on the menu.png",
+        ],
+        medium: "Oil on linen board",
+        sku: "0559-O",
+        frame: "Unframed",
+        size: "25 x 25 cm (10\" x 10\")"
+    }
+];
+
+const artwork_thumbnails = document.getElementById("artwork_thumbnails");
+const product_detail_artwork = document.getElementById("product_detail_artwork");
+const product_detail_title = document.getElementById("product_detail_title");
+const product_detail_price = document.getElementById("product_detail_price");
+const product_detail_info = document.getElementById("product_detail_info");
+const productBreadcrumb_result = document.getElementById("breadcrumbNavi_result");
+const addtoCart_button = document.getElementById("addtocart_button");
+
+if (product_detail_artwork && product_detail_title && product_detail_price) {
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get("product") || "shoreline";
+
+    const found = products.find(function(product) {
+        return product.id === productId;
+    }) || products[0];
+    
+    product_detail_artwork.src = found.images[0];
+    product_detail_artwork.alt = found.name;
+    product_detail_title.textContent = found.name;
+    product_detail_price.textContent = found.price;
+
+    if (productBreadcrumb_result) {
+        productBreadcrumb_result.textContent = found.name;
+    }
+
+    artwork_thumbnails.innerHTML = 
+        "<div class='infoRow'><span>" + found.medium + "</span><span>SKU " + found.sku + "</span></div>" +
+        "<div class='infoRow'><span>" + found.frame + "</span><span>" + found.size + "</span></div>";
+
+    artwork_thumbnails.innerHTML = "";
+
+    found.images.forEach(function(imgSrc, index) {
+        const thumb = document.createElement("img");
+        thumb.src = imgSrc;
+        thumb.alt = found.name + "thumbnail";
+        
+        if (index === 0) {
+            thumb.classList.add("active");
+        }
+
+        thumb.addEventListener("click", function() {
+            product_detail_artwork.src = imgSrc;
+                    
+            artwork_thumbnails.querySelectorAll("img").forEach(function(item) {
+                item.classList.remove("active");
+            });
+            
+            thumb.classList.add("active");
+        });
+
+        artwork_thumbnails.appendChild(thumb);
+    });
+    
+    let inCart = false;
+
+    if (addtoCartButton) {
+        addtoCartButton.addEventListener("click", function() {
+            if (!inCart) {
+                addtoCartButton.textContent = "Go to cart";
+                addtoCartButton.classList.add("added");
+                inCart = true;
+            } else {
+                window.location.href = "shoppingcart.html";
+            }
+        });
+    }
+ }

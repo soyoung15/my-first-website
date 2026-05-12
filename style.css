@@ -435,7 +435,7 @@ main,
 }
 
 .breadcrumbNavi {
-    margin: 0 0 8px;
+    margin: 16px 0 8px;
     font-family: "Gothic A1", sans-serif;
     font-size: 0.6rem;
     font-weight: 30;
@@ -570,6 +570,7 @@ main,
 .searchGallery {
     padding: 0;
     display: flex;
+    max-width: 600px;
     flex-direction: column;
     gap: 6px;
 }
@@ -696,25 +697,25 @@ main,
 /* SHOP */
 
 .shop {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 54px 75px 100px;
+    padding: 24px 20px 60px;
 }
 
 .shopTopElements {
-    margin-bottom: 55px;
-    gap: 25px;
+    position: relative;
+    margin: 0 auto 16px;
+    gap: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 900px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 24px;
 }
 
 .shop .searchGallery {
-    width: 420px;
-    max-width: 420px;
-    display: flex;
-    flex-direction: row;
+    max-width: 600px;
+    width: 100%;
+    flex: unset;
     margin: 0;
 }
 
@@ -748,7 +749,7 @@ main,
 }
 
 .shop .breadcrumbNavi {
-    margin: 0 0 45px;
+    margin: 24px auto 8px;
     font-size: 0.6rem;
 }
 
@@ -802,9 +803,9 @@ main,
     background-color: #FFE79B;
     text-align: center;
     display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .productArtwork img {
@@ -870,6 +871,114 @@ main,
     width: 30px;
     height: auto;
     display: block;
+}
+
+/* PRODUCT DETAIL */
+
+.productDetail {
+    padding: 16px 24px 60px;
+}
+
+.productDetailLayout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.productDetailImage {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.productDetailArtwork {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    display: block;
+}
+
+.artworkThumbnails {
+    display: flex;
+    gap: 10px;
+}
+
+.artworkThumbnails img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.artworkThumbnails img.active,
+.artworkThumbnails img:hover {
+    border-color: #EFB85B;
+}
+
+.productDetailText {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.productDetailTitle {
+    margin: 0;
+    font-family: "IM Fell English", Georgia, Serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #5A3E00;
+}
+
+.productDetailPrice {
+    margin: 0;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1rem;
+    color: #554f45;
+    font-weight: 200;
+}
+
+.productDetailInfo {
+    border-top: 1px solid #FFE79B;
+    padding-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.productDetailInfo .infoRow {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #FFE79B;
+    padding-bottom: 10px;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.8rem;
+    color: #5A3E00;
+}
+
+.addToCartButton {
+    margin-top: 8px;
+    padding: 12px 30px;
+    background-color: #FFE79B;
+    border: none;
+    border-radius: 8px;
+    align-self: flex-start;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.9rem;
+    color: #5A3E00;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.addToCartButton:hover {
+    background-color: #EFB85B;
+}
+
+.addToCartButton.added {
+    background-color: #5A3E00;
+    color: #FFE79B;
 }
 
 /* ADJUSTING TO DESKTOP SIZE */
@@ -1051,5 +1160,67 @@ main,
         justify-content: center;
         left: 0;
         right: 0;
+    }
+
+    /* PRODUCT DETAIL */
+
+    .productDetail {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 75px 25px 100px;
+    }
+
+    .productDetail .breadcrumbNavi {
+        margin: 0 0 28px;
+    }
+
+    .productDetailLayout {
+        display: grid;
+        grid-template-columns: 520px 1fr;
+        gap: 80px;
+        align-items: start;
+    }
+
+    .productDetailImage {
+        display: grid;
+        grid-template-columns: 1fr 75px;
+        align-items: start;
+        gap: 18px;
+    }
+
+    .productDetailArtwork {
+        max-height: none;
+        width: 100%;
+        height: 430px;
+        object-fit: cover;
+    }
+
+    .artworkThumbnails {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .artworkThumbnails img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .productDetailText {
+        padding-top: 28px;
+        text-align: left;
+    }
+
+    .productDetailTitle {
+        margin-bottom: 60px;
+    }
+
+    .productDetailInfo {
+        margin: 0 0 120px;
+        max-width: 330px;
+    }
+
+    .addToCartButton {
+        display: block;
+        margin: 0 auto;
     }
 }

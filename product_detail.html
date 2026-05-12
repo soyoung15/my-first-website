@@ -48,17 +48,19 @@
                     <span id="breadcrumbNavi_result"></span>
                 </p>
 
-                <img src="images/productlist/shoreline.png" alt="shoreline" class="productDetailArtwork" id="product_detail_artwork">
+                <div class="productDetailLayout">
+                    <div class="productDetailImage">
+                        <img src="images/productlist/shoreline.png" alt="artwork picture" class="productDetailArtwork" id="product_detail_artwork">
+                        <div class="artworkThumbnails" id="artwork_thumbnails"></div>
+                    </div>
 
-                <div class="artworkThumbnails" id="artwork_thumbnails"></div>
-                <h1 class="productDetailTitle" id="product_detail_title"></h1>
-                <p class="productDetailPrice" id="product_detail_price"></p>
-
-                <div class="productdetailInfo" id="product_detail_info"></div>
-
-                <button class="addToCartButton" id="addtocart_button" aria-label="Add to cart">
-                    Add to cart
-                </button>
+                    <div class="productDetailText">
+                        <h1 class="productDetailTitle" id="product_detail_title"></h1>
+                        <p class="productDetailPrice" id="product_detail_price"></p>
+                        <div class="productDetailInfo" id="product_detail_info"></div>
+                        <button class="addToCartButton" id="addtocart_button">Add to cart</button>
+                    </div>
+                </div>
             </section>
         </main>
 
