@@ -444,7 +444,7 @@ main,
 .breadcrumbNavi a {
     color: #91918a;
     text-decoration: none;
-    trasntion: color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .breadcrumbNavi a:hover {
@@ -696,24 +696,24 @@ main,
 /* SHOP */
 
 .shop {
-    max-width: 920px;
+    max-width: 1180px;
     margin: 0 auto;
-    padding: 40px 24px 70px;
+    padding: 54px 75px 100px;
 }
 
 .shopTopElements {
-    position: relative;
-    margin: 0 auto 42px;
-    gap: 20px;
+    margin-bottom: 55px;
+    gap: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .shop .searchGallery {
-    width: 230px;
-    max-width: 550px;
-    flex: 1;
+    width: 420px;
+    max-width: 420px;
+    display: flex;
+    flex-direction: row;
     margin: 0;
 }
 
@@ -729,7 +729,7 @@ main,
 }
 
 .filterButton img {
-    width: 30px;
+    width: 35px;
     display: block;
 }
 
@@ -743,6 +743,11 @@ main,
     width: 180px;
     border-radius: 8px;
     background-color: #EFB85B;
+}
+
+.shop .breadcrumbNavi {
+    margin: 0 0 45px;
+    font-size: 0.6rem;
 }
 
 .filterOption.open {
@@ -772,35 +777,46 @@ main,
     text-decoration: underline;
 }
 
+.shop .breadcrumbNavi {
+    margin: 0 0 40px;
+    font-size: 0.6rem;
+}
+
 .productList {
-    display: grid;
-    padding-top: 55px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 45px;
     justify-items: center;
     grid-template-columns: 1fr;
-    gap: 95px;
+    gap: 100px;
 }
 
 .productArtwork {
     position: relative;
-    margin: 0 auto;
-    padding: 120px 20px 50px;
-    width: 270px;
-    max-width: 270px;
+    padding: 140px 20px 50px;
+    width: 240px;
+    min-height: 250px;
     border-radius: 8px;
     background-color: #FFE79B;
     text-align: center;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+
+.productArtwork img {
+    width: 180px;
+    height: 180px;
 }
 
 .productArtwork > img,
-.productArtwork a img {
+.productArtwork > a {
     position: absolute;
     margin: 0 auto;
-    width: 200px;
-    height: 200px;
-    top: -50px;
-    left: 0;
-    right: 0;
-    aspect-ratio: 1 / 1;
+    width: 180px;
+    height: 180px;
+    top: -55px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -813,7 +829,7 @@ main,
 
 .productArtwork h2,
 .productArtwork h2 a{
-    margin: 0 0 6px;
+    margin: 0 0 8px;
     text-align: center;
     color: #5A3E00;
     font-family: "IM Fell English", Georgia, Serif;
@@ -823,7 +839,7 @@ main,
 }
 
 .productArtwork p {
-    margin: 0 0 14px;
+    margin: 0;
     color: #91918a;
     font-family: "IM Fell English", Georgia, Serif;
     font-size: 0.8rem;
@@ -834,10 +850,10 @@ main,
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -10px;
+    bottom: -18px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 22px;
 }
 
 .productlistButton button {
@@ -848,7 +864,7 @@ main,
 }
 
 .productlistButton img {
-    width: 28px;
+    width: 30px;
     height: auto;
     display: block;
 }
@@ -981,38 +997,57 @@ main,
     /* SHOP */
 
     .shop {
-        max-width: 920px;
-        padding: 54px 40px 90px;
+        max-width: 1180px;
+        padding: 44px 24px 80px;
+    }
+
+    .shopTopElements {
+        gap: 15px;
+        margin-bottom: 60px;
     }
 
     .shop .searchGallery {
-        width: 330px;
+        width: 420px;
+        max-width: 420px;
     }
 
     .productList {
         grid-template-columns: repeat(4, 1fr);
-        gap: 100px 50px;
-        padding-top: 60px;
+        justify-content: space-between;
+        gap: 100px 45px;
     }
 
     .productArtwork {
-        max-width: 200px;
-        padding: 95px 12px 34px;
+        position: relative;
+        width: 220px;
+        max-width: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        padding: 125px 15px 40px;
     }
 
-    .productArtwork > img,
-    .productArtwork a img {
-        width: 130px;
-        height: 130px;
-        top: -45px;
+    .productArtwork > a > img {
+        width: 180px;
+        height: 180px;
     }
 
     .productArtwork h2,
     .productArtwork h2 a {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .productArtwork p {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .productlistButton {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        left: 0;
+        right: 0;
     }
 }
