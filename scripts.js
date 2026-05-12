@@ -315,7 +315,7 @@ const products = [
         name: "What's On The Menu?",
         price: "$490.00",
         images: [
-            "images/productlist/what's on the menu.png",
+            "images/productlist/what's on the menu.png"
         ],
         medium: "Oil on linen board",
         sku: "0559-O",
@@ -349,7 +349,7 @@ if (product_detail_artwork && product_detail_title && product_detail_price) {
         productBreadcrumb_result.textContent = found.name;
     }
 
-    artwork_thumbnails.innerHTML = 
+    product_detail_info.innerHTML = 
         "<div class='infoRow'><span>" + found.medium + "</span><span>SKU " + found.sku + "</span></div>" +
         "<div class='infoRow'><span>" + found.frame + "</span><span>" + found.size + "</span></div>";
 
@@ -379,11 +379,11 @@ if (product_detail_artwork && product_detail_title && product_detail_price) {
     
     let inCart = false;
 
-    if (addtoCartButton) {
-        addtoCartButton.addEventListener("click", function() {
+    if (addtoCart_button) {
+        addtoCart_button.addEventListener("click", function() {
             if (!inCart) {
-                addtoCartButton.textContent = "Go to cart";
-                addtoCartButton.classList.add("added");
+                addtoCart_button.textContent = "Go to cart";
+                addtoCart_button.classList.add("added");
                 inCart = true;
             } else {
                 window.location.href = "shoppingcart.html";
