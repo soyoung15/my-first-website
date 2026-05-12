@@ -783,12 +783,12 @@ main,
 }
 
 .productList {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     padding-top: 45px;
     justify-items: center;
     grid-template-columns: 1fr;
-    gap: 100px;
+    gap: 120px 100px;
 }
 
 .productArtwork {
@@ -998,6 +998,7 @@ main,
 
     .shop {
         max-width: 1180px;
+        margin: 0 auto;
         padding: 44px 24px 80px;
     }
 
@@ -1013,8 +1014,6 @@ main,
 
     .productList {
         grid-template-columns: repeat(4, 1fr);
-        justify-content: space-between;
-        gap: 100px 45px;
     }
 
     .productArtwork {
