@@ -250,3 +250,45 @@ if (filter_button && filter_option) {
         filter_option.classList.toggle("open");
     });
 }
+
+const productList = document.getElementById("product_list");
+const filter_buttons = document.getElementById(".filterOption button");
+
+if (productList && filter_buttons.length > 0) {
+    filter_buttons.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            const artworks = Array.from(productList.querySelectorAll(".productArtwork"));
+
+            artworks.sort(function(a, b) {
+                const titleA = a.querySelector("h2").textContent.trim();
+                const titleB = b.querySelector("h2").textContent.trim();
+                const priceA = parseFloat(a.querySelector("p").textContent.replace(/[^0-9.]/g, ""));
+                const priceB = parseFloat(b.querySelector("p").textContent.replace(/[^0-9.]/g, ""));
+
+                const label = btn.textContent.trim();
+
+                if (label === "Alphabetically, A-Z") {
+                    return titleA.localeCompare(titleB);
+                }
+
+                if (label === "Alphabetically, Z-A") {
+                    return titleB.localeCompare(titleA);
+                }
+
+                if (label === "Price, low to high") {
+                    return priceA - priceB;
+                }
+
+                if (label === "Price, high to low") {
+                    return priceB - priceA;
+                }
+            });
+
+            artworks.forEach(function(artwork) {
+                productList.appendChild(artwork);
+            });
+
+            filter_option.classList.remove("open");
+        });
+    });
+}
