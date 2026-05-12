@@ -244,6 +244,7 @@ if (result_artwork && result_title) {
 
 const filter_button = document.getElementById("filter_button");
 const filter_option = document.getElementById("filter_option");
+const product_list = document.getElementById("product_list");
 
 if (filter_button && filter_option) {
     filter_button.addEventListener("click", function() {
@@ -251,13 +252,12 @@ if (filter_button && filter_option) {
     });
 }
 
-const productList = document.getElementById("product_list");
-const filter_buttons = document.getElementById(".filterOption button");
-
-if (productList && filter_buttons.length > 0) {
+if (product_list) {
+    const filter_buttons = document.querySelectorAll(".filterOption button");
+    
     filter_buttons.forEach(function(btn) {
         btn.addEventListener("click", function() {
-            const artworks = Array.from(productList.querySelectorAll(".productArtwork"));
+            const artworks = Array.from(product_list.querySelectorAll(".productArtwork"));
 
             artworks.sort(function(a, b) {
                 const titleA = a.querySelector("h2").textContent.trim();
@@ -285,7 +285,7 @@ if (productList && filter_buttons.length > 0) {
             });
 
             artworks.forEach(function(artwork) {
-                productList.appendChild(artwork);
+                product_list.appendChild(artwork);
             });
 
             filter_option.classList.remove("open");
