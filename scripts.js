@@ -311,7 +311,7 @@ const products = [
         size: "40 x 40 cm (16\" x 16\")"
     },
     {
-        id: "what's_on_the_menu",
+        id: "What's-On-The-Menu?",
         name: "What's On The Menu?",
         price: "$490.00",
         images: [
