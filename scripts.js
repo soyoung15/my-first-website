@@ -390,4 +390,167 @@ if (product_detail_artwork && product_detail_title && product_detail_price) {
             }
         });
     }
- }
+}
+
+/* SHOPPING CART */
+
+const shoppingcart_items = document.getElementById("shoppingcart_items");
+const shoppingcart_total = document.getElementById("shoppingcart_total");
+const adding_coupon = document.getElementById("adding_coupon");
+const coupon_input = document.getElementById("coupon_input");
+const coupon_number = document.getElementById("coupon_number");
+const coupon_apply = document.getElementById("coupon_apply");
+const checkout_button = document.getElementById("checkout_button");
+
+if (shoppingcart_items) {
+    const defaultCart = [
+        {
+        id: "shoreline",
+        name: "Shoreline",
+        price: "$1,290.00",
+        images: "images/productlist/shoreline.png",
+        size: "40 x 40 cm (16\" x 16\")",
+        qty: 1
+    },
+
+    {
+        id: "What's-On-The-Menu?",
+        name: "What's On The Menu?",
+        price: "$490.00",
+        images: "images/productlist/what's on the menu.png",
+        size: "25 x 25 cm (10\" x 10\")",
+        qty: 2
+        }
+    ];
+
+    let cart = JSON.parse(localStorage.getItem("cart") || "null");
+
+    if (!cart || cart.length === 0) {
+        cart = defaultCart;
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    function getPriceNumber(priceText) {
+        return parseFloat(priceText.replace(/[^0-9.]/g, ""));
+    }
+
+    function saveCart() {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    function updateTotal() {
+        let total = 0;
+
+        cart.forEach(function(item) {
+            total += getPriceNumber(item.price) * item.qty;
+        });
+
+        shoppingcart_total.textContent = "$" + total.toLocaleString("en-US", { 
+            minimumFractionDigits: 2, 
+            maximumFractionDigits: 2 
+        });
+    }
+
+    function renderCart() {
+        shoppingcart_items.innerHTML = "";
+
+        cart.forEach(function(item) {
+            const div = document.createElement("div");
+            div.classList.add("shoppingcartItems");
+
+            div.innerHTML =
+                "<img class='artworkImage' src='" + item.image + "' alt='" + item.name + "'>" +
+                "<div class='shoppingcartItemsInfo'>" +
+                    "<h2>" + item.name + "</h2>" +
+                    "<p>" + item.size + "</p>" +
+                    "<p class='shoppingcartItemsPrice'>" + item.price + "</p>" +
+                "</div>" +
+                "<div class='shoppingcartItemsFunction'>" +
+                    "<button type='button' class='deleteButton'" + (item.qty === 1 ? " show" : "") + "'data-id='" + item.id + "'>" +
+                        "<img src='images/icons/delete.png' alt='delete icon'>" +
+                    "</button>" +
+                    "<button type='button' class='addButton' data-id='" + item.id + "'>" +
+                        "<img src='images/icons/add.png' alt='add icon'>" +
+                    "</button>" +
+                    "<span>" + item.qty + "</span>" + 
+                    "<button type='button' class='minusButton' data-id='" + item.id + "'>" +
+                        "<img src='images/icons/minus.png' alt='minus icon'>" +
+                    "</button>" +
+                "</div>";
+            shoppingcart_items.appendChild(div);
+        });
+
+        updateTotal();
+
+        shoppingcart_items.querySelectorAll(".addButton").forEach(function(button) {
+            button.addEventListener("click", function() {
+                const id = button.getAttribute("data-id");
+                const item = cart.find(function(product) {
+                    return product.id === id;
+                });
+
+                if (item) {
+                    item.qty += 1;
+                    saveCart();
+                    renderCart();
+                }
+            });
+        });
+
+        shoppingcart_items.querySelectorAll(".minusButton").forEach(function(button) {
+            button.addEventListener("click", function() {
+                const id = button.getAttribute("data-id");
+                const item = cart.find(function(product) {
+                    return product.id === id;
+                });
+
+                if (item && item.qty > 1) {
+                    item.qty -= 1;
+                    saveCart();
+                    renderCart();
+                } else {
+                    button.style.display = "none";
+                    button.parentElement.querySelector(".deleteButton").classList.add("show");
+                }
+            });
+        });
+
+        shoppingcart_items.querySelectorAll(".deleteButton").forEach(function(button) {
+            button.addEventListener("click", function() {
+                const id = button.getAttribute("data-id");
+
+                cart = cart.filter(function(product) {
+                    return product.id !== id;
+                });
+
+                saveCart();
+                renderCart();
+            });
+        });
+    }
+
+    renderCart();
+
+    adding_coupon.addEventListener("click", function() {
+        coupon_input.classList.toggle("open");
+
+        if (coupon_input.classList.contains("open")) {
+            adding_coupon.textContent = "- Enter a coupon code";
+            coupon_number.focus();
+        } else {
+            adding_coupon.textContent = "+ Enter a coupon code";
+        }
+    });
+
+    coupon_apply.addEventListener("click", function() {
+        if (coupon_number.value.trim() !== "") {
+            coupon_apply.textContent = "Applied";
+        }
+    });
+    
+
+    checkout_button.addEventListener("click", function() {
+        const shipping = document.querySelector("input[name='shipping']:checked");
+        alert("Checkout selected: " + shipping.value);
+        });
+    }

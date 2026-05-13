@@ -697,7 +697,7 @@ main,
 /* SHOP */
 
 .shop {
-    padding: 24px 20px 60px;
+    padding: 24px 24px 60px;
 }
 
 .shopTopElements {
@@ -989,6 +989,231 @@ main,
     color: #FFE79B;
 }
 
+/* SHOPPING CART */
+
+.shoppingCart {
+    padding: 24px 24px 60px;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.keepShopping {
+    display: block;
+    margin-bottom: 8px;
+    color: #91918a;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.keepShopping:hover {
+    color: #EFB85B;
+}
+
+.shoppingcartHeading {
+    margin: 0 0 20px;
+    text-align: left;
+    color: #5A3E00;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.2rem;
+}
+
+.shoppingcartLayout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.shoppingcartItems {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+    padding: 10px 12px;
+    background-color: #FFE79B;
+    border-radius: 8px;
+    
+}
+
+.artworkImage {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.shoppingcartItemsInfo {
+    flex: 1;
+}
+
+.shoppingcartItemsInfo h2 {
+    margin: 0 0 4px;
+    font-family: "IM Fell English", Georgia, Serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #5A3E00;
+}
+
+.shoppingcartItemsInfo p {
+    margin: 0 0 6px;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 200;
+    color: #5A3E00;
+}
+
+.shoppingcartItemsPrice {
+    font-family: "IM Fell English", Georgia, Serif;
+    font-size: 0.95rem;
+    font-weight: 200;
+    color: #5A3E00;
+}
+
+.shoppingcartItemsFunction {
+    margin-left: auto;
+    display: flex;
+    padding: 4px 10px;
+    align-items: center;
+    gap: 8px;
+    background-color: #5A3E00;
+    border-radius: 16px;
+}
+
+.shoppingcartItemsFunction button {
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.shoppingcartItemsFunction button img {
+    width: 12px;
+    height: 12px;
+    display: block;
+    object-fit: contain;
+}
+
+.shoppingcartItemsFunction span {
+    min-width: 16px;
+    text-align: center;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.85rem;
+    color: #FFE79B;
+}
+
+.deleteButton {
+    display: none;
+}
+
+.deleteButton.show {
+    display: block;
+}
+
+.shoppingcartSummary {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.addCoupon {
+    margin: 0;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.8rem;
+    color: #91918a;
+    cursor: pointer;
+}
+
+.couponInput {
+    display: none;
+    margin-top: 8px;
+    gap: 8px;
+}
+
+.couponInput open {
+    display: flex;
+}
+
+.couponInput input {flex: 1;
+    padding: 8px 12px;
+    border: 1px solide #FFE79B;
+    border-radius: 6px;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.8rem;
+    background-color: #FFFADE;
+    color: #5A3E00;
+}
+
+.couponInput button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.8rem;
+    background-color: #FFE79B;
+    color: #5A3E00;
+    cursor: pointer;
+}
+
+.couponInput button:hover {
+    background-color: #EFB85B;
+}
+
+.shippingMethod {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.shippingMethod p {
+    margin: 0;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.8rem;
+    color: #5A3E00;
+}
+
+.shippingMethod label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.8rem;
+    color: #5A3E00;
+    cursor: pointer;
+}
+
+.shippingMethod input[type="radio"] {
+    accent-color: #5A3E00;
+}
+
+.shoppingcartTotal {
+    display: flex;
+    padding-top: 16px;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #5A3E00;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #5A3E00;
+}
+
+.checkoutButton {
+    width: 100%;
+    padding: 14px;
+    background-color: #FFE79B;
+    border: none;
+    border-radius: 8px;
+    align-self: flex-start;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.9rem;
+    color: #5A3E00;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.addToCartButton:hover {
+    background-color: #EFB85B;
+}
+
 /* ADJUSTING TO DESKTOP SIZE */
 
 @media (min-width: 768px) {
@@ -1227,5 +1452,26 @@ main,
     .addToCartButton {
         display: block;
         margin: 0 auto;
+    }
+
+    /* SHOPPING CART */
+
+    .shoppingCart {
+        padding: 40px 70px 80px;
+    }
+
+    .shoppingcartLayout {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 60px;
+    }
+
+    .shoppingcartItems {
+        flex: 1;
+    }
+
+    .shoppingcartSummary {
+        width: 280px;
+        flex-shrink: 0;
     }
 }
