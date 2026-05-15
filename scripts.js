@@ -469,12 +469,12 @@ if (shoppingcart_items) {
                     "<button type='button' class='deleteButton'" + (item.qty === 1 ? " show" : "") + "'data-id='" + item.id + "'>" +
                         "<img src='images/icons/delete.png' alt='delete icon'>" +
                     "</button>" +
-                    "<button type='button' class='addButton' data-id='" + item.id + "'>" +
-                        "<img src='images/icons/add.png' alt='add icon'>" +
-                    "</button>" +
-                    "<span>" + item.qty + "</span>" + 
                     "<button type='button' class='minusButton' data-id='" + item.id + "'>" +
                         "<img src='images/icons/minus.png' alt='minus icon'>" +
+                    "</button>" +
+                    "<span>" + item.qty + "</span>" +
+                    "<button type='button' class='addButton' data-id='" + item.id + "'>" +
+                        "<img src='images/icons/add.png' alt='add icon'>" +
                     "</button>" +
                 "</div>";
             shoppingcart_items.appendChild(div);
