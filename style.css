@@ -1128,7 +1128,7 @@ main,
     gap: 8px;
 }
 
-.couponInput open {
+.couponInput.open {
     display: flex;
 }
 

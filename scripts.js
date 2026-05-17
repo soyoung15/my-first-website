@@ -412,7 +412,6 @@ if (shoppingcart_items) {
         size: "40 x 40 cm (16\" x 16\")",
         qty: 1
     },
-
     {
         id: "What's-On-The-Menu?",
         name: "What's On The Menu?",
@@ -508,9 +507,13 @@ if (shoppingcart_items) {
                     item.qty -= 1;
                     saveCart();
                     renderCart();
-                } else {
-                    button.style.display = "none";
-                    button.parentElement.querySelector(".deleteButton").classList.add("show");
+                } else if (item && item.qty === 1) {
+                    cart = cart.filter(function(product) { 
+                        return product.id !== id; 
+                    });
+                    
+                    saveCart();
+                    renderCart();
                 }
             });
         });
