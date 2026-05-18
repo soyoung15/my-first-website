@@ -382,6 +382,25 @@ if (product_detail_artwork && product_detail_title && product_detail_price) {
     if (addtoCart_button) {
         addtoCart_button.addEventListener("click", function() {
             if (!inCart) {
+                let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+                const existingItem = cart.find(function (item) {
+                    return item.id === found.id;
+                });
+
+                if (existingItem) {
+                    existingItem.qty += 1;
+                } else {
+                    cart.push({
+                        id: found.id,
+                        name: found.name,
+                        price: found.price,
+                        image: found.images[0],
+                        size: found.size,
+                        qty: 1
+                    });
+                }
+                localStorage.setItem("cart", JSON.stringify(cart));
                 addtoCart_button.textContent = "Go to cart";
                 addtoCart_button.classList.add("added");
                 inCart = true;
@@ -403,31 +422,8 @@ const coupon_apply = document.getElementById("coupon_apply");
 const checkout_button = document.getElementById("checkout_button");
 
 if (shoppingcart_items) {
-    const defaultCart = [
-        {
-        id: "shoreline",
-        name: "Shoreline",
-        price: "$1,290.00",
-        images: "images/productlist/shoreline.png",
-        size: "40 x 40 cm (16\" x 16\")",
-        qty: 1
-    },
-    {
-        id: "What's-On-The-Menu?",
-        name: "What's On The Menu?",
-        price: "$490.00",
-        images: "images/productlist/what's on the menu.png",
-        size: "25 x 25 cm (10\" x 10\")",
-        qty: 2
-        }
-    ];
 
-    let cart = JSON.parse(localStorage.getItem("cart") || "null");
-
-    if (!cart || cart.length === 0) {
-        cart = defaultCart;
-        localStorage.setItem("cart", JSON.stringify(cart));
-    }
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
     function getPriceNumber(priceText) {
         return parseFloat(priceText.replace(/[^0-9.]/g, ""));
@@ -453,29 +449,70 @@ if (shoppingcart_items) {
     function renderCart() {
         shoppingcart_items.innerHTML = "";
 
+        if (cart.length === 0) {
+            shoppingcart_items.innerHTML = "<p style='color:#5A3E00; font-size:0.9rem;'>No item in shopping cart.</p>";
+            updateTotal();
+            return;
+        }
+
         cart.forEach(function(item) {
             const div = document.createElement("div");
             div.classList.add("shoppingcartItems");
 
-            div.innerHTML =
-                "<img class='artworkImage' src='" + item.image + "' alt='" + item.name + "'>" +
-                "<div class='shoppingcartItemsInfo'>" +
-                    "<h2>" + item.name + "</h2>" +
-                    "<p>" + item.size + "</p>" +
-                    "<p class='shoppingcartItemsPrice'>" + item.price + "</p>" +
-                "</div>" +
-                "<div class='shoppingcartItemsFunction'>" +
-                    "<button type='button' class='deleteButton'" + (item.qty === 1 ? " show" : "") + "'data-id='" + item.id + "'>" +
-                        "<img src='images/icons/delete.png' alt='delete icon'>" +
-                    "</button>" +
-                    "<button type='button' class='minusButton' data-id='" + item.id + "'>" +
-                        "<img src='images/icons/minus.png' alt='minus icon'>" +
-                    "</button>" +
-                    "<span>" + item.qty + "</span>" +
-                    "<button type='button' class='addButton' data-id='" + item.id + "'>" +
-                        "<img src='images/icons/add.png' alt='add icon'>" +
-                    "</button>" +
-                "</div>";
+            const img = document.createElement("img");
+            img.className = "artworkImage";
+            img.src = item.image;
+            img.alt = item.name;
+
+            const info = document.createElement("div");
+            info.className = "shoppingcartItemsInfo";
+            info.innerHTML =
+                "<h2>" + item.name + "</h2>" +
+                "<p>" + item.size + "</p>" +
+                "<p class='shoppingcartItemsPrice'>" + item.price + "</p>";
+
+            const controls = document.createElement("div");
+            controls.className = "shoppingcartItemsFunction";
+
+            const deleteButton = document.createElement("button");
+            deleteButton.type = "button";
+            deleteButton.className = "deleteButton" + (item.qty === 1 ? " show" : "");
+            deleteButton.setAttribute("data-id", item.id);
+            const deleteButtonImg = document.createElement("img");
+            deleteButtonImg.src = "images/icons/delete.png";
+            deleteButtonImg.alt = "delete button icon";
+            deleteButton.appendChild(deleteButtonImg);
+
+            const minusButton = document.createElement("button");
+            minusButton.type = "button";
+            minusButton.className = "minusButton";
+            minusButton.setAttribute("data-id", item.id);
+            const minusButtonImg = document.createElement("img");
+            minusButtonImg.src = "images/icons/minus.png";
+            minusButtonImg.alt = "minus button icon";
+            minusButton.appendChild(minusButtonImg);
+
+            const qtySpan = document.createElement("span");
+            qtySpan.textContent = item.qty;
+
+            const addButton = document.createElement("button");
+            addButton.type = "button";
+            addButton.className = "addButton";
+            addButton.setAttribute("data-id", item.id);
+            const addButtonImg = document.createElement("img");
+            addButtonImg.src = "images/icons/add.png";
+            addButtonImg.alt = "add button icon";
+            addButton.appendChild(addButtonImg);
+
+            controls.appendChild(deleteButton);
+            controls.appendChild(minusButton);
+            controls.appendChild(qtySpan);
+            controls.appendChild(addButton);
+
+            div.appendChild(img);
+            div.appendChild(info);
+            div.appendChild(controls);
+
             shoppingcart_items.appendChild(div);
         });
 
@@ -511,7 +548,7 @@ if (shoppingcart_items) {
                     cart = cart.filter(function(product) { 
                         return product.id !== id; 
                     });
-                    
+
                     saveCart();
                     renderCart();
                 }
@@ -555,5 +592,5 @@ if (shoppingcart_items) {
     checkout_button.addEventListener("click", function() {
         const shipping = document.querySelector("input[name='shipping']:checked");
         alert("Checkout selected: " + shipping.value);
-        });
-    }
+    });
+}
