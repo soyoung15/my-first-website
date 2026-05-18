@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regina Hona - Gallery_water</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="actualHomepage" id="actual_homepage">
+        <header class="siteHeader">
+            <button class="hamburgerMenubar" id="menu_bar" aria-label="Open menu">
+                <img src="images/icons/open_menu.png" alt="open menu icon">
+            </button>
+
+            <a href="index.html#actual_homepage" class="logoToHome" aria-label="Going back to homepage">
+                <img src="images/logo.png" alt="regina hona's logo" class="homepageLogo">
+            </a>
+
+            <a href="shoppingcart.html" class="shoppingcartLink" aria-label="Shopping cart">
+                <img src="images/icons/shoppingcart.png" alt="shopping cart icon" class="shoppingcartIcon">
+            </a>
+        </header>
+
+        <nav class="mobileNavi" id="mobile_navi">
+            <button class="menubarClose" id="close_menu_bar" aria-label="Close menu">
+                <img src="images/icons/close_menu.png" alt="close menu icon">
+            </button>
+            
+            <ul class="menubarList">
+                <li><a href="index.html#actual_homepage">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="checkout">
+                <h1 class="checkoutHeading">Secure Checkout</h1>
+
+                <div class="checkoutLayout">
+                    <div class="checkoutFillin">
+                        <div class="checkoutDetail">
+                            <h2 class="checkoutDetailHeading">Contact</h2>
+                            <input type="text" class="checkoutInput" id="checkout_name" placeholder="Name">
+                            <input type="tel" class="checkoutInput" id="checkout_phone" placeholder="Phone">
+                            <input type="email" class="checkoutInput" id="checkout_email" placeholder="Email">
+                        </div>
+
+                        <div class="checkoutDetail">
+                            <h2 class="checkoutDetailHeading">Delivery</h2>
+                            <input type="text" class="checkoutInput" id="checkout_address" placeholder="Address">
+                            <input type="text" class="checkoutInput" id="checkout_suburb" placeholder="Suburb">
+                            <input type="text" class="checkoutInput" id="checkout_state" placeholder="State/territory">
+                            <input type="text" class="checkoutInput" id="checkout_postcode" placeholder="Postcode">
+                        </div>
+
+                        <div class="checkoutDetail">
+                            <h2 class="checkoutDetailHeading">Payment</h2>
+
+                            <div class="paymentOptions">
+                                <label class="paymentOption">
+                                    <div class="paymentOptionFirst">
+                                        <div class="paymentRadio">
+                                            <input type="radio" name="payment" value="credit" id="creditcard" checked>
+                                            <span>Credit card</span>
+                                        </div>
+                                        <div class="creditcardImg">
+                                            <img src="images/cards/visa.png" alt="visa logo">
+                                            <img src="images/cards/mastercard.png" alt="mastercard logo">
+                                            <img src="images/cards/jcb.png" alt="jcb logo">
+                                            <img src="images/cards/amex.png" alt="amex logo">
+                                        </div>
+                                    </div>
+                                    <div class="creditcardInput" id="creditcard_input">
+                                        <input type="text" class="checkoutInput" placeholder="Card number">
+                                        <input type="text" class="checkoutInput" placeholder="Expiration date (MM/YY)">
+                                        <input type="text" class="checkoutInput" placeholder="Security code">
+                                        <input type="text" class="checkoutInput" placeholder="Name on card">
+                                    </div>
+                                </label>
+
+                                <label class="paymentOption">
+                                    <div class="paymentOptionFirst">
+                                        <div class="paymentRadio">
+                                            <input type="radio" name="payment" value="applepay" id="apple_pay">
+                                            <span>Apple pay</span>
+                                        </div>
+                                        <img src="images/cards/applepay.png" alt="apple pay logo" class="paymentLogo">
+                                    </div>
+                                </label>
+
+                                <label class="paymentOption">
+                                    <div class="paymentOptionFirst">
+                                        <div class="paymentRadio">
+                                            <input type="radio" name="payment" value="paypal" id="pay_pal">
+                                            <span>Paypal</span>
+                                        </div>
+                                        <img src="images/cards/paypal.png" alt="paypal logo" class="paymentLogo">
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="checkoutSummary">
+                        <div class="orderSummaryBox">
+                            <h2 class="orderSummaryHeading">Order summary</h2>
+                            <div id="order_summary_items"></div>
+
+                            <div class="orderSummaryTotals">
+                                <div class="orderSummaryInfo">
+                                    <span>Subtotal</span>
+                                    <span id="order_subtotal">$0.00</span>
+                                </div>
+                                <div class="orderSummaryInfo">
+                                    <span>Shipping</span>
+                                </div>
+                                <div class="orderSummaryInfo">
+                                    <span>Taxes</span>
+                                    <span id="order_taxes">$0.00</span>
+                                </div>
+                            </div>
+
+                            <div class="orderTotal">
+                                <span>Order total</span>
+                                <span id="order_total">$0.00</span>
+                            </div>
+                        </div>
+
+                        <button class="completeOrderButton" id="complete_order_button">Complete order</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <section class="insiderlistText">
+                <h2>Join my Insiders List</h2>
+                <p>Get first access to new work, exhibitions and art related news.</p>
+            </section>
+
+            <section class="artistassociationPic">
+                <img src="images/artist-association.png" alt="footer logo">
+            </section>
+
+            <nav class="socialmedias" aria-label="Social media links">
+                <a href="https://www.facebook.com/ReginaHonaArtist/" aria-label="Facebook">
+                    <img src="images/icons/facebook.png" alt="facebook icon">
+                </a>
+
+                <a href="https://www.instagram.com/reginahonaart/" aria-label="Instagram">
+                    <img src="images/icons/instagram.png" alt="instagram icon">
+                </a>
+
+                <a href="mailto:reginahona@gmail.com" aria-label="Email">
+                    <img src="images/icons/email.png" alt="email icon">
+                </a>
+            </nav>
+
+            <section class="copyright">
+                <p>© Copyright Regina Hona Fine Art 2011-2025</p>
+                <p>Copyright Regina Hona Fine Art 2011-2025</p>
+
+                <p>All rights reserved. Website Terms of Use</p>
+                <p>Site by Abstract Ideas & Zoom Graphic Design</p>
+            </section>
+        </footer>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

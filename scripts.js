@@ -474,26 +474,31 @@ if (shoppingcart_items) {
             const controls = document.createElement("div");
             controls.className = "shoppingcartItemsFunction";
 
-            const deleteButton = document.createElement("button");
+            if (item.qty === 1) {
+                const deleteButton = document.createElement("button");
             deleteButton.type = "button";
-            deleteButton.className = "deleteButton" + (item.qty === 1 ? " show" : "");
+            deleteButton.className = item.qty === 1 ? "deleteButton show" : "deleteButton";
             deleteButton.setAttribute("data-id", item.id);
             const deleteButtonImg = document.createElement("img");
             deleteButtonImg.src = "images/icons/delete.png";
             deleteButtonImg.alt = "delete button icon";
             deleteButton.appendChild(deleteButtonImg);
-
-            const minusButton = document.createElement("button");
-            minusButton.type = "button";
-            minusButton.className = "minusButton";
-            minusButton.setAttribute("data-id", item.id);
-            const minusButtonImg = document.createElement("img");
-            minusButtonImg.src = "images/icons/minus.png";
-            minusButtonImg.alt = "minus button icon";
-            minusButton.appendChild(minusButtonImg);
+            controls.appendChild(deleteButton);
+            } else {
+                const minusButton = document.createElement("button");
+                minusButton.type = "button";
+                minusButton.className = "minusButton";
+                minusButton.setAttribute("data-id", item.id);
+                const minusButtonImg = document.createElement("img");
+                minusButtonImg.src = "images/icons/minus.png";
+                minusButtonImg.alt = "minus button icon";
+                minusButton.appendChild(minusButtonImg);
+                controls.appendChild(minusButton);
+            }
 
             const qtySpan = document.createElement("span");
             qtySpan.textContent = item.qty;
+            controls.appendChild(qtySpan);
 
             const addButton = document.createElement("button");
             addButton.type = "button";
@@ -503,16 +508,11 @@ if (shoppingcart_items) {
             addButtonImg.src = "images/icons/add.png";
             addButtonImg.alt = "add button icon";
             addButton.appendChild(addButtonImg);
-
-            controls.appendChild(deleteButton);
-            controls.appendChild(minusButton);
-            controls.appendChild(qtySpan);
             controls.appendChild(addButton);
 
             div.appendChild(img);
             div.appendChild(info);
             div.appendChild(controls);
-
             shoppingcart_items.appendChild(div);
         });
 
@@ -542,13 +542,6 @@ if (shoppingcart_items) {
 
                 if (item && item.qty > 1) {
                     item.qty -= 1;
-                    saveCart();
-                    renderCart();
-                } else if (item && item.qty === 1) {
-                    cart = cart.filter(function(product) { 
-                        return product.id !== id; 
-                    });
-
                     saveCart();
                     renderCart();
                 }
