@@ -1235,6 +1235,7 @@ main,
     color: #5A3E00;
     font-family: "Gothic A1", sans-serif;
     font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .checkoutLayout {
@@ -1348,6 +1349,25 @@ main,
     background-color: #FFFADE;
 }
 
+.completeOrderButton {
+    order: 1;
+    width: 100%;
+    padding: 15 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #EFB85B;
+    color: #5A3E00;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.completeOrderButton:hover {
+    background-color: #EFB85B;
+    color: #5A3E00;
+}
+
 .orderSummaryBox {
     padding: 15px;
     border-radius: 8px;
@@ -1381,9 +1401,9 @@ main,
 .orderSummaryItemInfo h3 {
     margin: 0 0 6px;
     color: #5A3E00;
-    font-family: "Gothic A1", sans-serif;
-    font-size: 0.95rem;
-    font-weight: 400;
+    font-family: "IM Fell English", Georgia, Serif;
+    font-size: 0.85rem;
+    font-weight: 450;
 }
 
 .orderSummaryItemInfo p {
@@ -1436,25 +1456,6 @@ main,
     font-family: "Gothic A1", sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
-}
-
-.completeOrderButton {
-    order: 1;
-    width: 100%;
-    padding: 15 20px;
-    border: none;
-    border-radius: 8px;
-    background-color: #EFB85B;
-    color: #5A3E00;
-    font-family: "Gothic A1", sans-serif;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.completeOrderButton:hover {
-    background-color: #EFB85B;
-    color: #5A3E00;
 }
 
 .paymentSuccess,
@@ -1792,7 +1793,7 @@ main,
 
     .checkoutFillin {
         grid-column: 1;
-        grid-row: 1 / sapn 2;
+        grid-row: 1 / span 2;
         padding-right: 55px;
         border-right: 1px solid #FFE79B;
     }
