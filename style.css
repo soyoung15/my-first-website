@@ -1264,7 +1264,7 @@ main,
     margin: 0 0 6px;
     color: #5A3E00;
     font-family: "Gothic A1", sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
 }
 
@@ -1276,14 +1276,15 @@ main,
     background-color: #FFE79B;
     color: #5A3E00;
     font-family: "Gothic A1", sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 200;
     outline: none;
 }
 
 .checkoutInput::placeholder {
     color: #5A3E00;
-    font-weight: 100;
+    font-weight: 200;
+    opacity: 0.75;
 }
 
 .paymentOptions {
@@ -1341,18 +1342,16 @@ main,
 .creditcardInput {
     display: flex;
     flex-direction: column;
-    margin-top: 15px;
+    margin-top: 10px;
     gap: 10px;
-}
-
-.creditcardInput {
     background-color: #FFFADE;
 }
 
 .completeOrderButton {
     order: 1;
-    width: 100%;
-    padding: 15 20px;
+    width: 200px;
+    padding: 10px 20px;
+    align-self: center;
     border: none;
     border-radius: 8px;
     background-color: #EFB85B;
@@ -1467,7 +1466,8 @@ main,
     margin: 0 0 20px;
     display: inline-block;
     color: #91918a;
-    font-size: 0.7rem;  
+    font-size: 0.7rem;
+    align-self: center;
 }
 
 .paymentSuccess img{
@@ -1788,7 +1788,6 @@ main,
     .checkoutSummary {
         grid-column: 2;
         grid-row: 1;
-        order: 0;
     }
 
     .checkoutFillin {
@@ -1799,11 +1798,13 @@ main,
     }
 
     .completeOrderButton {
-        margin-top: 22px;
-        width: 150px;
-        height: 35px;
-        justify-self: center;
         display: block;
+        margin-top: 4px;
+        padding: 12px 20px;
+        width: 150px;
+        height: auto;
+        justify-self: center;
+        align-self: start;
     }
 
     .paymentSuccessHeading {

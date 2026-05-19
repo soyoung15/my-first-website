@@ -629,14 +629,34 @@ if (order_summary_items) {
             const div = document.createElement("div");
             div.className = "orderSummaryItem";
 
-            div.innerHTML =
-                "<img src='" + (item.image || item.images || "") + "' alt='" + item.name + "'>" +
-                "<div class='orderSummaryItemInfo'>" +
-                    "<h3>" + item.name + "</h3>" +
-                    "<p>" + item.size + "</p>" +
-                    "<p class='orderSummaryPrice'>" + item.price + "</p>" +
-                "</dv>" +
-                "<span class='orderSummaryQty'>Quantity: " + item.qty + "</span>";
+            const img = document.createElement("img");
+            img.src = item.image;
+            img.alt = item.name;
+
+            const info = document.createElement("div");
+            info.className = "orderSummaryItemInfo";
+
+            const title = document.createElement("h3");
+            title.textContent = item.name;
+
+            const size = document.createElement("p");
+            size.textContent = item.size;
+
+            const price = document.createElement("p");
+            price.className = "orderSummaryPrice";
+            price.textContent = item.price;
+
+            const qty = document.createElement("span");
+            qty.className = "orderSummaryQty";
+            qty.textContent = "Quantity: " + item.qty;
+
+            info.appendChild(title);
+            info.appendChild(size);
+            info.appendChild(price);
+
+            div.appendChild(img);
+            div.appendChild(info);
+            div.appendChild(qty);
             detailbox.appendChild(div);
         });
 
