@@ -583,7 +583,116 @@ if (shoppingcart_items) {
     
 
     checkout_button.addEventListener("click", function() {
-        const shipping = document.querySelector("input[name='shipping']:checked");
-        alert("Checkout selected: " + shipping.value);
+        window.location.href = "checkout.html";
     });
+}
+
+/* CHECKOUT */
+
+const order_summary_items = document.getElementById("order_summary_items");
+const order_subtotal = document.getElementById("order_subtotal");
+const order_shipping = document.getElementById("order_shipping");
+const order_taxes = document.getElementById("order_taxes");
+const order_total = document.getElementById("order_total");
+const complete_order_button = document.getElementById("complete_order_button");
+
+const ordersuccess_items = document.getElementById("ordersuccess_summary_items");
+const ordersuccess_subtotal = document.getElementById("ordersuccess_subtotal");
+const ordersuccess_shipping = document.getElementById("ordersuccess_shipping");
+const ordersuccess_taxes = document.getElementById("ordersuccess_taxes");
+const ordersuccess_total = document.getElementById("ordersuccess_total");
+
+const checkout = document.getElementById("check_out");
+const payment_success = document.getElementById("payment_success");
+
+if (order_summary_items) {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+    function getPriceNumber(priceText) {
+        return parseFloat(priceText.replace(/[^0-9.]/g, ""));
+    }
+
+    function Totalprice(price) {
+        return "$" + price.toLocaleString("en-US", {
+            minimumFractionDigits: 2, 
+            maximumFractionDigits: 2 
+        });
+    }
+
+    function renderOrderSummary(detailbox, subtotal, shipping, taxes, total) {
+        let subtotalPrice = 0;
+        detailbox.innerHTML = "";
+
+        cart.forEach(function(item) {
+            subtotalPrice += getPriceNumber(item.price) * item.qty;
+
+            const div = document.createElement("div");
+            div.className = "orderSummaryItem";
+
+            div.innerHTML =
+                "<img src='" + (item.image || item.images || "") + "' alt='" + item.name + "'>" +
+                "<div class='orderSummaryItemInfo'>" +
+                    "<h3>" + item.name + "</h3>" +
+                    "<p>" + item.size + "</p>" +
+                    "<p class='orderSummaryPrice'>" + item.price + "</p>" +
+                "</dv>" +
+                "<span class='orderSummaryQty'>Quantity: " + item.qty + "</span>";
+            detailbox.appendChild(div);
+        });
+
+        subtotal.textContent = Totalprice(subtotalPrice);
+        shipping.textContent = "-";
+        taxes.textContent = "$0.00";
+        total.textContent = Totalprice(subtotalPrice);
+    }
+
+    renderOrderSummary(
+        order_summary_items,
+        ordersuccess_subtotal,
+        ordersuccess_shipping,
+        ordersuccess_taxes,            
+        ordersuccess_total
+    );
+
+    const paymentRadios = document.querySelectorAll("input[name='payment']");
+    const creditCardInput = document.getElementById("creditcard_input");
+
+    if (creditCardInput) {
+        paymentRadios.forEach(function(radio) {
+            radio.addEventListener("change", function () {
+                    if (document.getElementById("creditcard").checked) {
+                        creditCardInput.style.display = "flex";
+                    } else {
+                        creditCardInput.style.display = "none";
+                    }
+            });
+        });
+    }
+
+    if (complete_order_button) {
+        complete_order_button.addEventListener("click", function() {
+            const name = document.getElementById("checkout_name").value.trim();
+            const email = document.getElementById("checkout_email").value.trim();
+            const address = document.getElementById("checkout_address").value.trim();
+
+            if (!name || !email || !address) {
+                alert("Please fill in your details.");
+                return;
+            }
+
+            renderOrderSummary(
+                order_summary_items,
+                ordersuccess_subtotal,
+                ordersuccess_shipping,
+                ordersuccess_taxes,
+                ordersuccess_total
+            );
+
+            checkout.hidden = true;
+            payment_success.hidden = false;
+
+            localStorage.removeItem("cart");
+            window.scrollTo(0,0);
+        });
+    }
 }

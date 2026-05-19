@@ -39,7 +39,7 @@
         </nav>
 
         <main>
-            <section class="checkout">
+            <section class="checkout" id="check_out">
                 <h1 class="checkoutHeading">Secure Checkout</h1>
 
                 <div class="checkoutLayout">
@@ -120,6 +120,7 @@
                                 </div>
                                 <div class="orderSummaryInfo">
                                     <span>Shipping</span>
+                                    <span id="order_shipping">-</span>
                                 </div>
                                 <div class="orderSummaryInfo">
                                     <span>Taxes</span>
@@ -134,6 +135,36 @@
                         </div>
 
                         <button class="completeOrderButton" id="complete_order_button">Complete order</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="paymentSuccess" id="payment_success" hidden>
+                <h1 class="paymentSuccessHeading">Payment successful!</h1>
+                <a href="shop.html" class="shopMore">&lt;&lt; Shop more</a>
+
+                <div class="orderSummaryBox paymentSuccessSummaryBox">
+                    <h2 class="orderSummaryHeading">Order summary</h2>
+                    <div id="ordersuccess_summary_items"></div>
+
+                    <div class="orderSummaryTotal">
+                        <div class="orderSummaryInfo">
+                            <span>Subtotal</span>
+                            <span id="ordersuccess_subtotal">$0.00</span>
+                        </div>
+                        <div class="orderSummaryInfo">
+                            <span>Shipping</span>
+                            <span id="ordersuccess_shipping">-</span>
+                        </div>
+                        <div class="orderSummaryInfo">
+                            <span>Taxes</span>
+                            <span id="ordersuccess_taxes">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="orderTotal">
+                        <span>Order total</span>
+                        <span id="ordersuccess_total">$0.00</span>
                     </div>
                 </div>
             </section>
