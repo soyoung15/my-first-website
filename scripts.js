@@ -701,7 +701,7 @@ if (order_summary_items) {
             }
 
             renderOrderSummary(
-                order_summary_items,
+                ordersuccess_items,
                 ordersuccess_subtotal,
                 ordersuccess_shipping,
                 ordersuccess_taxes,
