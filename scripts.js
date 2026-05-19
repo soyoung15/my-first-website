@@ -668,10 +668,10 @@ if (order_summary_items) {
 
     renderOrderSummary(
         order_summary_items,
-        ordersuccess_subtotal,
-        ordersuccess_shipping,
-        ordersuccess_taxes,            
-        ordersuccess_total
+        order_subtotal,
+        order_shipping,
+        order_taxes,            
+        order_total
     );
 
     const paymentRadios = document.querySelectorAll("input[name='payment']");

@@ -1344,7 +1344,6 @@ main,
     flex-direction: column;
     margin-top: 10px;
     gap: 10px;
-    background-color: #FFFADE;
 }
 
 .completeOrderButton {
@@ -1465,10 +1464,10 @@ main,
 
 .shopMore {
     margin: 0 0 20px;
-    display: inline-block;
+    display: block;
     color: #91918a;
     font-size: 0.7rem;
-    align-self: center;
+    text-align: center;
 }
 
 .paymentSuccess img{
@@ -1721,6 +1720,7 @@ main,
     .addToCartButton {
         display: block;
         margin: 0 auto;
+        align-items: center;
     }
 
     /* SHOPPING CART */
