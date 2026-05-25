@@ -963,7 +963,7 @@ main,
     font-family: "Gothic A1", sans-serif;
     font-size: 0.8rem;
     color: #5A3E00;
-    font-weight: 250;
+    font-weight: 200;
 }
 
 .addToCartButton {
@@ -975,6 +975,7 @@ main,
     align-self: flex-start;
     font-family: "Gothic A1", sans-serif;
     font-size: 0.9rem;
+    font-weight: 600;
     color: #5A3E00;
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -1070,6 +1071,7 @@ main,
     font-size: 0.95rem;
     font-weight: 400;
     color: #5A3E00;
+    font-style: italic;
 }
 
 .shoppingcartItemsFunction {
@@ -1210,6 +1212,7 @@ main,
     align-self: flex-start;
     font-family: "Gothic A1", sans-serif;
     font-size: 0.9rem;
+    font-weight: 600;
     color: #5A3E00;
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -1404,7 +1407,7 @@ main,
     color: #5A3E00;
     font-family: "IM Fell English", Georgia, Serif;
     font-size: 0.85rem;
-    font-weight: 450;
+    font-weight: 400;
 }
 
 .orderSummaryItemInfo p {
