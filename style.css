@@ -1470,11 +1470,16 @@ main,
 }
 
 .shopMore {
-    margin: 0 0 20px;
     display: block;
+    margin-bottom: 6px;
     color: #91918a;
+    font-family: "Gothic A1", sans-serif;
     font-size: 0.7rem;
-    text-align: center;
+    text-align: left;
+}
+
+.shopMore:hover {
+    color: #EFB85B;
 }
 
 .paymentSuccess img{
@@ -1487,6 +1492,80 @@ main,
     padding: 18px;
     max-width: 360px;
     text-align: left;
+}
+
+/* ABOUT */
+
+.about {
+    padding: 24px 24px 60px;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.aboutHeading {
+    margin: 0 0 20px;
+    text-align: center;
+    color: #5A3E00;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.aboutShop {
+    display: block;
+    margin-bottom: 28px;
+    color: #91918a;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.aboutShop:hover {
+    color: #EFB85B;
+}
+
+.contactBox {
+    background-color: #FFE79B;
+    border-radius: 10px;
+    padding: 24px 20px;
+}
+
+.contactHeading {
+    margin: 0 0 20px;
+    text-align: center;
+    color: #5A3E00;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.contactLayout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.contactImg {
+    width: 160px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.contactText {
+    text-align: center;
+}
+
+.contactText p {
+    margin: 0 0 15px;
+    color: #5A3E00;
+    line-height: 1.6;
+    font-family: "IM Fell English", Georgia, Serif;
+    font-size: 0.75rem;
+    font-weight: 300;
 }
 
 /* ADJUSTING TO DESKTOP SIZE */
@@ -1822,5 +1901,40 @@ main,
 
     .paymentSuccessSummaryBox {
         max-width: 520px;
+    }
+
+    /* ABOUT */
+
+    .about {
+        padding: 50px 70px 80px;
+    }
+
+    .aboutHeading {
+        font-size: 1.2rem;
+    }
+
+    .contactBox {
+        margin: 0 auto;
+        max-width: 620px;
+        padding: 28px 32px;
+    }
+
+    .contactLayout {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .contactImg {
+        width: 160px;
+        height: 180px;
+    }
+
+    .contactText {
+        text-align: center;
+    }
+
+    .contactText p {
+        font-size: 0.75rem;
     }
 }
