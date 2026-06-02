@@ -293,6 +293,28 @@ if (product_list) {
     });
 }
 
+/* LIKE ANIMATION */
+
+const likeButton = document.querySelectorAll(".likeButton");
+
+likeButton.forEach(function(button) {
+    button.addEventListener("click", function () {
+        const heartImg = button.querySelector("img");
+        const liked = button.classList.toggle("liked");
+
+        if (liked) {
+            heartImg.src = "images/icons/heart.png";
+
+            button.classList.remove("bounce");
+            void button.offsetWidth;
+            button.classList.add("bounce");
+        } else {
+            heartImg.src = "images/icons/like.png";
+            button.classList.remove("bounce");
+        }
+    });
+});
+
 /* PRODUCT DETAIL */
 
 const products = [

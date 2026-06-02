@@ -861,11 +861,23 @@ main,
     gap: 22px;
 }
 
-.productlistButton button {
+.productlistButton button,
+.likeButton {
     padding: 0;
     border: none;
     background: none;
     cursor: pointer;
+}
+
+.likeButton img {
+    width: 30px;
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.likeButton.bounce img {
+    animation: Bounce 0.5s ease;
 }
 
 .productlistButton img {
@@ -874,6 +886,28 @@ main,
     display: block;
 }
 
+@keyframes Bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.5);
+    }
+
+    60% {
+        transform: scale(0.75);
+    }
+
+    80% {
+        transform: scale(1.15);
+    }
+
+    100% 
+        {
+        transform: scale(1);
+    }
+}
 /* PRODUCT DETAIL */
 
 .productDetail {
