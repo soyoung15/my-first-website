@@ -711,7 +711,7 @@ main,
 
 .shopTopElements {
     position: relative;
-    margin: 0 auto 16px;
+    margin: 0 auto 8px;
     gap: 12px;
     display: flex;
     justify-content: center;
@@ -758,7 +758,7 @@ main,
 }
 
 .shop .breadcrumbNavi {
-    margin: 16px 0 8px;
+    margin: 24px 0 16px;
     font-size: 0.6rem;
 }
 
@@ -789,15 +789,10 @@ main,
     text-decoration: underline;
 }
 
-.shop .breadcrumbNavi {
-    margin: 0 0 40px;
-    font-size: 0.6rem;
-}
-
 .productList {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding-top: 45px;
+    padding-top: 60px;
     justify-items: center;
     grid-template-columns: 1fr;
     gap: 120px 100px;
@@ -921,7 +916,7 @@ main,
 .productDetail {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 70px 24px 90px;
+    padding: 30px 24px 100px;
 }
 
 .productDetail .breadcrumbNavi {
@@ -943,8 +938,8 @@ main,
 
 .productDetailArtwork {
     width: 100%;
-    max-width:350px;
-    height: 350px;
+    max-width:340px;
+    height: 340px;
     object-fit: cover;
     display: block;
     box-shadow: 0 4px 10px rgba(90, 62, 0, 0.35);
@@ -1808,13 +1803,13 @@ main,
     .productDetailLayout {
         display: grid;
         grid-template-columns: 550px 1fr;
-        gap: 80px;
+        gap: 60px;
         align-items: start;
     }
 
     .productDetailImage {
         display: grid;
-        grid-template-columns: 1fr 75px;
+        grid-template-columns: 1fr 170px;
         align-items: start;
         gap: 10px;
     }
@@ -1822,7 +1817,8 @@ main,
     .productDetailArtwork {
         width: 100%;
         aspect-ratio: 1 / 1;
-        max-height: 450px;
+        max-height: 500px;
+        height: auto;
     }
 
     .artworkThumbnails {
@@ -1845,7 +1841,7 @@ main,
     }
 
     .productDetailPrice {
-        margin-bottom: 55px;
+        margin-bottom: 50px;
     }
 
     .productDetailInfo {
