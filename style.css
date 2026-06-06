@@ -348,7 +348,8 @@ main,
 
 .socialmedias img {
     width: 22px;
-    height: auto;
+    height: 22px;
+    object-fit: contain;
 }
 
 .copyright {
