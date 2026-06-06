@@ -227,9 +227,13 @@ main,
 
 .previewGallery,
 .previewShop {
-    padding: 35px 0 50px;
+    padding: 35px 0 40px;
     text-align: center;
     overflow: hidden;
+}
+
+.previewShop {
+    padding-bottom: 100px;
 }
 
 .previewGallery h2 {
@@ -401,7 +405,7 @@ main,
 /* GALLERY */
 
 .gallery {
-    padding: 28px 24px 60px;
+    padding: 28px 24px 100px;
     background-color: #FFFADE;
 }
 
@@ -639,7 +643,7 @@ main,
 /* CATEGORY */
 
 .categoryPage {
-    padding: 60px 24px 80px;
+    padding: 60px 24px 100px;
 }
 
 .categoryPage h1 {
@@ -702,7 +706,7 @@ main,
 /* SHOP */
 
 .shop {
-    padding: 28px 24px 60px;
+    padding: 28px 24px 100px;
 }
 
 .shopTopElements {
@@ -801,7 +805,7 @@ main,
 
 .productArtwork {
     position: relative;
-    padding: 140px 20px 50px;
+    padding: 140px 20px 30px;
     width: 260px;
     min-height: 250px;
     border-radius: 8px;
@@ -859,7 +863,7 @@ main,
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -18px;
+    bottom: -15px;
     display: flex;
     justify-content: center;
     gap: 22px;
@@ -1535,7 +1539,7 @@ main,
 /* ABOUT */
 
 .about {
-    padding: 24px 24px 60px;
+    padding: 24px 24px 100px;
     max-width: 1180px;
     margin: 0 auto;
 }
@@ -1642,6 +1646,10 @@ main,
         padding: 28px 0;
     }
 
+    .previewShop {
+        padding-bottom: 100px;
+    }
+
     .previewGallery h2 {
         padding: 0 64px;
         font-size: 1.15rem;
@@ -1738,6 +1746,7 @@ main,
         margin: 0 auto;
         padding-left: 0;
         padding-right: 5px;
+        padding-bottom: 100px;
     }
 
     .shopTopElements {
@@ -1765,7 +1774,7 @@ main,
         justify-content: center;
         text-align: center;
         align-items: center;
-        padding: 125px 15px 40px;
+        padding: 125px 15px 30px;
     }
 
     .productArtwork > a > img {
@@ -1947,7 +1956,7 @@ main,
     /* ABOUT */
 
     .about {
-        padding: 50px 70px 80px;
+        padding: 50px 70px 100px;
     }
 
     .aboutHeading {
