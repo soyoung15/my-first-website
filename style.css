@@ -966,10 +966,6 @@ main,
     box-shadow: 0 4px 10px rgba(90, 62, 0, 0.35);
 }
 
-.productDetailText {
-    text-align: center;
-}
-
 .productDetailTitle {
     margin-top: 0;
     font-family: "IM Fell English", Georgia, Serif;
@@ -987,9 +983,17 @@ main,
     font-style: italic;
 }
 
+.productDetailText {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
 .productDetailInfo {
     margin: 0 auto 35px;
     max-width: 350px;
+    width: 100%;
 }
 
 .productDetailInfo .infoRow {
@@ -1010,6 +1014,7 @@ main,
     background-color: #FFE79B;
     border: none;
     border-radius: 8px;
+    margin: 0 auto;
     align-self: flex-start;
     font-family: "Gothic A1", sans-serif;
     font-size: 0.9rem;
@@ -1256,7 +1261,7 @@ main,
     transition: background-color 0.2s ease;
 }
 
-.addToCartButton:hover {
+.checkoutButton:hover {
     background-color: #EFB85B;
 }
 
@@ -1832,8 +1837,9 @@ main,
     }
 
     .productDetailText {
-        padding-top: 0;
-        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .productDetailTitle {
@@ -1846,14 +1852,15 @@ main,
 
     .productDetailInfo {
         margin: 0 0 120px;
-        max-width: 330px;
+        width: 330px;
     }
 
     .addToCartButton {
         display: block;
-        margin: 0 auto;
-        align-items: center;
+        margin: 0 0 0 80px;
+        width: 170px;
     }
+
 
     /* SHOPPING CART */
 
