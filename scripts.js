@@ -127,6 +127,7 @@ const allArtworks = [
         category: "Shop",
         categoryPage: "shop.html",
         price: "$490.00",
+        productId: "What's-On-The-Menu?",
         related: [
             "images/productlist/grandmother's gown.png",
             "images/productlist/cave explorers.png",
@@ -187,6 +188,17 @@ if (result_artwork && result_title) {
                 result_category.textContent = found.price;
             } else {
                 result_category.textContent = "From " + found.category + " collection";
+            }
+
+            const result_artwork_linking = document.getElementById("result_artwork_linking");
+            if (result_artwork_linking) {
+                if (found.productId) {
+                    result_artwork_linking.href = "product_detail.html?product=" + found.productId;
+                    result_artwork_linking.style.cursor = "pointer";
+                } else {
+                    result_artwork_linking.removeAttribute("href");
+                    result_artwork_linking.style.cursor = "default";
+                }
             }
 
             /* BREADCRUMB */
