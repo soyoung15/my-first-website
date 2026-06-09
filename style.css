@@ -1036,7 +1036,7 @@ main,
 /* SHOPPING CART */
 
 .shoppingCart {
-    padding: 24px 24px 60px;
+    padding: 24px 24px 100px;
     max-width: 1180px;
     margin: 0 auto;
 }
@@ -1269,7 +1269,7 @@ main,
 
 .checkout,
 .paymentSuccess {
-    padding: 24px 24px 60px;
+    padding: 24px 24px 100px;
     max-width: 1180px;
     margin: 0 auto;
 }
@@ -1521,11 +1521,11 @@ main,
 
 .shopMore {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 20px;
     color: #91918a;
     font-family: "Gothic A1", sans-serif;
     font-size: 0.7rem;
-    text-align: left;
+    text-align: center;
 }
 
 .shopMore:hover {
@@ -1873,7 +1873,7 @@ main,
     /* SHOPPING CART */
 
     .shoppingCart {
-        padding: 50px 70px 80px;
+        padding: 50px 70px 100px;
     }
 
     .shoppingcartHeading {
@@ -1917,7 +1917,7 @@ main,
 
     .checkout,
     .paymentSuccess {
-        padding: 60px 70px 90px;
+        padding: 60px 70px 100px;
     }
 
     .checkoutHeading,

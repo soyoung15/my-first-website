@@ -723,30 +723,34 @@ if (order_summary_items) {
         });
     }
 
-    if (complete_order_button) {
-        complete_order_button.addEventListener("click", function() {
-            const name = document.getElementById("checkout_name").value.trim();
-            const email = document.getElementById("checkout_email").value.trim();
-            const address = document.getElementById("checkout_address").value.trim();
+    function twoCompleteOrderButton () {
+        const name = document.getElementById("checkout_name").value.trim();
+        const email = document.getElementById("checkout_email").value.trim();
+        const address = document.getElementById("checkout_address").value.trim();
 
-            if (!name || !email || !address) {
-                alert("Please fill in your details.");
-                return;
-            }
+        if (!name || !email || !address) {
+            alert("Please fill in your details.");
+            return;
+        }
 
-            renderOrderSummary(
-                ordersuccess_items,
-                ordersuccess_subtotal,
-                ordersuccess_shipping,
-                ordersuccess_taxes,
-                ordersuccess_total
-            );
+        renderOrderSummary(
+            ordersuccess_items,
+            ordersuccess_subtotal,
+            ordersuccess_shipping,
+            ordersuccess_taxes,
+            ordersuccess_total
+        );
 
-            checkout.hidden = true;
-            payment_success.hidden = false;
+        checkout.hidden = true;
+        payment_success.hidden = false;
 
-            localStorage.removeItem("cart");
-            window.scrollTo(0,0);
-        });
+        localStorage.removeItem("cart");
+        window.scrollTo(0,0);
     }
+
+    const mobileButton = document.getElementById("complete_order_button");
+    const desktopButton = document.getElementById("complete_order_button_desktop");
+
+    if (mobileButton) mobileButton.addEventListener("click", twoCompleteOrderButton);
+    if (desktopButton) desktopButton.addEventListener("click", twoCompleteOrderButton);
 }
