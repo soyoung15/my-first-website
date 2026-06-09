@@ -327,6 +327,37 @@ likeButton.forEach(function(button) {
     });
 });
 
+/* SHOPPING CART BUTTON */
+
+const shoppingcartButton = document.querySelectorAll(".shoppingcartButton");
+
+shoppingcartButton.forEach(function(button) {
+    button.addEventListener("click", function() {
+        const id = button.getAttribute("data-id");
+        const name = button.getAttribute("data-name");
+        const price = button.getAttribute("data-price");
+        const image = button.getAttribute("data-image");
+        const size = button.getAttribute("data-size");
+
+        let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+        const existing = cart.find(function(item) {
+            return item.id === id;
+        });
+
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            cart.push({ id, name, price, image, size, qty: 1});
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        const img = button.querySelector("img");
+        img.src = "images/icons/shoppingcartcheck.png";
+    });
+});
+
 /* PRODUCT DETAIL */
 
 const products = [

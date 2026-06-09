@@ -1248,11 +1248,10 @@ main,
     width: 100%;
     max-width: 150px;
     padding: 12px;
-    align-items: center;
     background-color: #FFE79B;
     border: none;
     border-radius: 8px;
-    align-self: flex-start;
+    align-self: center;
     font-family: "Gothic A1", sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
@@ -1274,10 +1273,18 @@ main,
     margin: 0 auto;
 }
 
-.checkoutHeading,
-.paymentSuccessHeading {
+.checkoutHeading {
     margin: 0 0 20px;
     text-align: left;
+    color: #5A3E00;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.paymentSuccessHeading {
+    margin: 0 0 20px;
+    text-align: center;
     color: #5A3E00;
     font-family: "Gothic A1", sans-serif;
     font-size: 1.2rem;
@@ -1735,7 +1742,7 @@ main,
     }
 
     .categoryPage {
-        padding: 60px 70px 80px;
+        padding: 60px 70px 100px;
     }
 
     .categoryGrid {
@@ -1953,8 +1960,8 @@ main,
         grid-row: 2;
         margin-top: 0;
         width: 150px;
-        align-self: start;
-        justify-self: start;
+        align-self: center;
+        justify-self: center;
     }
 
     .mobileButton {
